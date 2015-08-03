@@ -1,0 +1,18 @@
+﻿Table SystemUser
+Y Y UserId        INT      4    0
+N N UserAlias     VARCHAR  16  
+N N Email         VARCHAR  50  
+N N FirstName     VARCHAR  20  
+N N LastName      VARCHAR  20  
+N N MiddleName    VARCHAR  20  
+N N FullName      VARCHAR  60  
+N N Gender        INT      2
+N N RegisterDate  DATETIME 8   NOW()
+N N LastLoginDate DATETIME 8   NOW()
+N N Branch        INT      4
+N N Photo         VARCHAR  50  
+N N PinBlock      VARCHAR  64  
+N N ContactNo     VARCHAR  20
+N N ContactNo2    VARCHAR  20
+N N Nationality   VARCHAR  2
+End Table

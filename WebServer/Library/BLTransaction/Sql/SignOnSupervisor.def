@@ -1,0 +1,12 @@
+﻿Table SignOnSupervisor
+Y Y TellerId           VARCHAR  8    0
+N N BranchId           INT      4    0
+N N CurrentBranch      INT      4    0
+N N TellerRoleId       INT      4    0
+N N Enabled            INT      4    0
+N N TellerName         VARCHAR  50   0
+End Table
+
+Query ByCurrentBranchAndTellerId
+Key = CurrentBranch,TellerId`<>
+End Query

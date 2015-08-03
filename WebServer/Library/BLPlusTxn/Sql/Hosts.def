@@ -1,0 +1,4 @@
+﻿Table Hosts
+Y Y HostId     INT      4  0
+N N HostName  VARCHAR  50 
+End Table

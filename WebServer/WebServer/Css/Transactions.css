@@ -1,0 +1,213 @@
+.bl_txn_user_info .bl_user_img {
+    float:left; 
+    width: 100px;
+}
+
+.bl_txn_user_info .bl_user_img img {
+    width: 77px; height: 89px; border: 1px solid #888888; padding: 5px;
+}
+
+.bl_txn_user_info .bl_user_summary {
+    float: left;
+}
+
+.customer_info_details {
+    padding-top: 20px;
+}
+
+.bl_txn_user_info h1 {
+    font-size: 22pt;
+    padding: 0px;
+    height: auto;
+}
+
+.icon_font {
+    font-family: Wingdings;
+}
+
+.bl_txn_user_info .bl_user_role {
+    margin-top: 20px;
+}
+
+.bl_txn_user_info .bl_user_role ul {
+    list-style: none;
+}
+
+.bl_txn_user_info .bl_user_role ul li {
+    background-color: #b2ab9b; color: white; float: left; border-radius: 10px 10px; padding: 5px; padding-left: 15px; padding-right: 15px;  margin-right: 15px;
+}
+
+.bl_txn_user_info hr {
+    top: 200px; width: 100%;
+}
+
+.bl_txn_user_info .bl_user_details {
+    width: 100%;
+    float: left;
+    padding-top: 20px;
+}
+
+.bl_txn_user_info .bl_user_details h2 {
+    font-size: 14pt;
+}
+
+.bl_txn h1 {
+    background-image: url('../Images/Region_Dev.fw.png');
+    background-repeat: no-repeat;
+}
+
+.bl_txn_user_info table tr {
+    height: 26px;
+}
+
+.bl_txn_user_info table tr td:first-child {
+    width: 100px;
+}
+
+.bl_txn_user_info .bl_user_details ul {
+    list-style: none;
+}
+
+.bl_txn_user_info .bl_user_details ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 20px;
+    padding-left: 5px;
+    width: 270px;
+}
+
+.bl_txn_user_info .bl_user_details ul li img {
+    height: 48px;
+    width: 48px;
+    padding-right: 10px;
+}
+
+#bl_login .bl_status_bar {
+    text-align: left;
+}
+
+#bl_login_pages {
+    padding-bottom: 30px;
+}
+
+.sup_override_required img {
+    width: 24px;
+}
+
+.sup_override_required h2 {
+    display: inline;
+    font-size: 12pt;
+}
+
+.sup_override_required {
+    position: relative;
+    background-color: #fef8ee;
+    margin: -10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+th, td {
+    padding: 6px;
+}
+
+.account_summary table {
+    border-bottom: none;
+}
+
+.bl_txn th {
+    background-color: #eeeeee;
+    border-bottom: 1px solid #aaaaaa;
+    font-weight: 800;
+    text-align: left;
+}
+
+tr:nth-child(2n) {
+    background-color: white;
+}
+
+.sup_override_required button {
+    border: 1px solid #444444;
+    background-color: white;
+    width: 180px;
+    color: #0578C5;
+    height: 36px;
+}
+
+.sup_override_required .close_button {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    width: 20px;
+    border: none;
+    background: none;
+}
+
+.sup_override_required .close_button img {
+    width: 16px;
+}
+
+.sup_override_required .bl_control {
+    margin-top: 15px;
+}
+
+.blockUI .close_button {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    width: 20px;
+    border: none;
+    background: none;
+    z-index: 999;
+}
+
+.blockUI .close_button img {
+    width: 16px;
+}
+
+.small_button {
+    width: 100px;
+    height: 42px;
+}
+
+.Caculator {
+    background-color: #f7f5e1;
+    width: 400px;
+}
+
+.Caculator .txn_table tr {
+    background-color: #f7f5e1;
+}
+
+.Caculator .txn_table tr td:nth-child(2n) {
+    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+.Caculator .txn_table tr td {
+    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.Caculator .CaculatorMenu ul li:hover {
+    background-color: #005C99;
+    color: white;
+    cursor: pointer;
+}
+
+.Caculator .CaculatorMenu ul li {
+    background-color: white;
+}
+
+.related_txn button {
+    width: 100px; height: 32px; color: black; background-color: white;
+}

@@ -1,0 +1,8 @@
+﻿Table COMPANYNO
+Y Y PAYROLLCODE           VARCHAR      5    ""
+N N COMPANYID         VARCHAR  10  ""
+N N COMPANYNAME             VARCHAR      100    ""
+
+End Table
+
+

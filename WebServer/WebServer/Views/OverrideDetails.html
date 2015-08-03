@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+            <table>
+                <tr>
+                    <th>Sequence No</th>
+                    <th>Override Code</th>
+                    <th>Capability</th>
+                    <th>Description</th>
+                    <th>Teller</th>
+                    <th>Supervisor</th>
+                    <th>Status</th>
+                    <th>Request Date</th>
+                    <th>Update Date</th>
+                </tr>
+                <tr bind="OverrideHistoryList">
+                    <td bind-item="SequenceNo"></td>    
+                    <td bind-item="OverrideCode">9</td>
+                    <td bind-item="Capability"></td>
+                    <td bind-item="OverrideDescription"></td>
+                    <td><span bind-item="Username"></span>(<span bind-item="UserId"></span>)</td>
+                    <td><span bind-item="SupervisorName"></span>(<span bind-item="SupervisorId"></span>)</td>
+                    <td><span bind-item="StatusDescription"></span>(<span bind-item="Status"></span>)</td>
+                    <td bind-item="RequestDate"></td>
+                    <td bind-item="UpdateDate"></td>
+                </tr>
+            </table>
+</body>
+</html>

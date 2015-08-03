@@ -1,0 +1,4 @@
+﻿Table OverrideStatus
+Y Y OverrideStatusId  INT     4 0
+N N Description       VARCHAR 50
+End Table

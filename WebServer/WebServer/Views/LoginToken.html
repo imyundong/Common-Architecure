@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../Scripts/jquery-1.11.1.js"></script>
+    <script src="../Scripts/bl-library.js"></script>
+</head>
+<body>
+    <a id="LoginToken"></a>
+    <script>
+        window.onload = function () {
+            window.name = getCookie("LoginToken");
+            clearCookie("LoginToken")
+        }
+    </script>
+</body>
+</html>

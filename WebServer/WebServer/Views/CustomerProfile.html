@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+    <div>
+        <div class="bl_user_img" style="float: left; width: 80px;" >
+            <img src="../Images/Icon_User_Photo.fw.png" style="width: 70px; height: 100px;" />
+        </div>
+        <div class="bl_user_summary">
+            <div>
+                <h1 bind="CustomerName" style="height: 40px;">
+                    Tommy
+                    <img src="../Images/Star.fw.png"><img src="../Images/Star.fw.png"><img src="../Images/Star.fw.png"><img src="../Images/Star.fw.png">
+                </h1>
+            </div>
+            <div>
+                Customer Id : <span bind="CustomerId">
+                    103949030
+                </span>
+            </div>
+            <div class="customer_info_details">
+                <span class="icon_font"></span><span bind="Cellphone"> 0988-294-505 </span>, Age : <span bin="Age">19</span> (<span bind="Birthday">1984-01-01</span>) <span bind="Company"> Tata Consultancy Services </span>
+                <br />
+                
+            </div>
+        </div>
+        
+        <div class="bl_user_details" style="padding-top: 20px">
+            <h2>
+                <img src="Images/Icon_Transaction.fw.png" />
+                Details
+            </h2>
+            <hr />
+        </div>
+        <div class="bl_user_details">
+            <table>
+                <tr>
+                    <td>
+                        Address
+                    </td>
+                    <td>
+                        <span bind="Address">
+                            Room 206, Jingshuyuan Road, Haidian Distinct, Beijing.
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Contact No
+                    </td>
+                    <td>
+                        <span bind="ContactNo">
+                            186-1234-5678
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ID
+                    </td>
+                    <td>
+                        <span bind="IDType_Value">
+                            Passport
+                        </span>
+                        (<span bind="IDType">
+                            51
+                        </span>)
+                        <span bind="IDNumber">
+                            A123456789
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                    <td style="height: 30px;">
+                        <img style="height: 24px;" src="../Images/Icon_Card.fw.png" /> IBD : 12 | 0 (Credit Card) <button style="border-radius: 12px; width: 130px; background-color: #d3600a; border: 1px solid white; height: 28px;">Apply Credit Card</button> <img style="height: 28px;" src="../Images/Details.fw.png" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="bl_user_details">
+            <br />
+            <h2>
+                <img src="Images/Icon_Transaction.fw.png" />
+                Assets
+            </h2>
+            <hr />
+            <img src="../Images/PieChart.fw.png" style="height: 240px" / >
+            <br /><br />
+            <h2>
+                <img src="Images/Icon_Transaction.fw.png" />
+                Accounts
+            </h2>
+            <hr />
+            <div>
+                <br />
+                <table>
+                    <tr>
+                        <th>
+                            Account No
+                        </th>
+                        <th>
+                            Account Type
+                        </th>
+                        <th>
+                            Account Name
+                        </th>
+                        <th>
+                            Balance
+                        </th>
+                        <th>
+                            Currency
+                        </th>
+                        <th>
+                            Acess Date
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>20602000000751</td>
+                        <td>0510-0403</td>
+                        <td>Saving Account</td>
+                        <td>23,000.00</td>
+                        <td>TWD</td>
+                        <td>2015-07-03</td>
+                        <td><img style="height: 28px;" src="../Images/Details.fw.png" /> <button style="border-radius: 12px; width: 80px; border: 1px solid white; height: 28px;">Deposit</button> </td>
+                    </tr>
+                    <tr>
+                        <td>30902000000394</td>
+                        <td>0400-0303</td>
+                        <td>Term Deposit Account</td>
+                        <td>1,000,000.00</td>
+                        <td>CNY</td>
+                        <td>2015-07-01</td>
+                        <td><img style="height: 28px;" src="../Images/Details.fw.png" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        var ActionCustomerProfile = function () { };
+        ActionCustomerProfile.prototype.Ready = function (Container) {
+        }
+    </script>
+</body>
+</html>

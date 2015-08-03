@@ -1,0 +1,5 @@
+﻿Table BroadcastNotification
+N N TellerID      VARCHAR  8  ""
+N N Sender        INT      4  0
+N N SystemDate    DATETIME 8 Now()
+End Table

@@ -1,0 +1,14 @@
+﻿Table OverrideHistory
+Y Y SequenceNo   IDENTITY  4
+N N OverrideId   VARCHAR  50 ""
+N N OverrideCode VARCHAR  10 ""
+N N UserId       INT      4  0
+N N SupervisorId INT      4  0
+N N Status       INT      4  0
+N N RequestDate  DATETIME 8  Now()
+N N UpdateDate   DATETIME 8  Now()
+End Table
+
+Query ByOverrideId
+Key = OverrideId
+End Query

@@ -1,0 +1,11 @@
+﻿Table TxnPath
+Y Y TxnPathId          INT      4    0
+N N TxnPathDescription VARCHAR  50   0
+N N Parent             INT      4    0
+N N IconIndex          INT      4    0
+N N Priority           INT      4    0
+End Table
+
+Query OrderByPriority
+Order = Parent`ASC,Priority`DESC
+End Query

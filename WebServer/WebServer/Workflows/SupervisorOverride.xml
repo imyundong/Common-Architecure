@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Workflow>
+  <!-- Keep Original Screen Data-->
+  <Node NodeId="Start" Assembly="ServerDataAdapter" Component="SetData" RunAt="Server">
+    <Parameter Id="Field" DataType="Reference" Value="UserData/OriginalScreenData" />
+    <Parameter Id="Value" DataType="Reference" Value="UserData/ScreenData" />
+    <NextNode>CheckIsBackground</NextNode>
+  </Node>
+  <Node NodeId="CheckIsBackground" Assembly="ServerDataAdapter" Component="If" RunAt="Server">
+    <Parameter Id="Field" DataType="Reference" Value="Control/IsBackground" />
+    <Parameter Id="Value" DataType="Value" Value="False" />
+    <Parameter Id="Condition" DataType="Value" Value="=" />
+    <NextNode Outcome="False">End</NextNode>
+    <NextNode Outcome="True">GetUserPage</NextNode>
+  </Node>
+  <Node NodeId="GetUserPage" Assembly="ScreenControl" Component="GetPageData" RunAt="Server">
+    <Parameter Id="PageId" DataType="Value" Value="OverrideRequired" />
+    <Parameter Id="PageData" DataType="Reference" Value="UserData/PageData" />
+    <NextNode>ShowOverrideRequest</NextNode>
+  </Node>
+  <Node NodeId="ShowOverrideRequest" Assembly="" Component="OverrideRequired" RunAt="Client">
+    <NextNode Outcome="Local">UserAuthentication</NextNode>
+    <NextNode Outcome="Remote">End</NextNode>
+  </Node>
+  <!-- Keep Override Details -->
+  <!-- Instead of OverrideDetails, Using OverrideId
+  <Node NodeId="KeepOverrideDetails" Assembly="ServerDataAdapter" Component="SetData" RunAt="Server">
+    <Parameter Id="Field" DataType="Reference" Value="UserData/OverrideDetails" />
+    <Parameter Id="Value" DataType="Reference" Value="UserData/ScreenData/OverrideDetails" />
+    <NextNode>UserAuthentication</NextNode>
+  </Node>
+  -->
+  <Node NodeId="UserAuthentication" Assembly="WorkflowDistributor" Component="WorkflowConnector" RunAt="Server">
+    <Parameter Id="Workflow" DataType="Value" Value="UserAuthentication" />
+    <Parameter Id="Node"     DataType="Value" Value="Start" />
+    <NextNode Outcome="True">SaveOverrideInfo</NextNode>
+    <NextNode>End.False</NextNode>
+  </Node>
+  <!-- Keep Override Information, Restore Screen Data from Original Data -->
+  <Node NodeId="SaveOverrideInfo" Assembly="ServerDataAdapter" Component="SetData" RunAt="Server">
+    <Parameter Id="Field" DataType="Reference" Value="UserData/Override/SupervisorId" />
+    <Parameter Id="Value" DataType="Reference" Value="UserData/ScreenData/UserID" />   
+    <Parameter Id="Field1"  DataType="Reference" Value="UserData/OriginalScreenData/SupervisorId" />
+    <Parameter Id="Value1"  DataType="Reference" Value="UserData/HostData/UserId" />
+    <Parameter Id="Field2"  DataType="Reference" Value="UserData/OriginalScreenData/SupervisorToken" />
+    <Parameter Id="Value2"  DataType="Reference" Value="UserData/HostData/UserToken" />
+    <Parameter Id="Field3"  DataType="Reference" Value="UserData/OriginalScreenData/OverrideId" />
+    <Parameter Id="Value3"  DataType="Reference" Value="UserData/ScreenData/OverrideId" />
+    <Parameter Id="Field4"  DataType="Reference" Value="UserData/ScreenData" />
+    <Parameter Id="Value4"  DataType="Reference" Value="UserData/OriginalScreenData" />
+    <Parameter Id="Field5"  DataType="Reference" Value="UserData/OriginalScreenData" />
+    <Parameter Id="Value5"  DataType="Value"     Value="" />
+    <NextNode>CloseOverridePage</NextNode>
+  </Node>
+  <Node NodeId="CloseOverridePage" Assembly="" Component="CloseOverridePage" RunAt="Client">
+    <NextNode>End.True</NextNode>
+  </Node>
+  <Node NodeId="End.True" Assembly="" Component="End" RunAt="Client">
+    <NextNode>True</NextNode>
+  </Node>
+  <Node NodeId="End.False" Assembly="" Component="End" RunAt="Client">
+    <NextNode>False</NextNode>
+  </Node>
+</Workflow>

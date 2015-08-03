@@ -1,0 +1,14 @@
+﻿Table TellerState
+N N TellerID      VARCHAR   8  0
+N N TellerRoleID  INT       4  0
+N N CurrentBranch INT       4  0
+N N ParentBranch  INT       4  0
+End Table
+
+Query ByCurrentBranchAndRole
+Key = CurrentBranch,TellerRoleID
+End Query
+
+Query ByParentBranchAndRole
+Key = ParentBranch,TellerRoleID
+End Query

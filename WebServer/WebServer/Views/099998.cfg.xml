@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PageConfig>
+  <Title>Display Original Transaction</Title>
+  <Link>Views/099998.html</Link>
+  <TransmitButton>false</TransmitButton>
+  <CloseButton>false</CloseButton>
+</PageConfig>

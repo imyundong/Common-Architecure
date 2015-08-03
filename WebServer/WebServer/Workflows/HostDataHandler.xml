@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Workflow>
+  <Node NodeId="Start" Assembly="ServerDataAdapter" Component="DataQuery" RunAt="Server">
+    <Parameter Id="ScreenData" DataType="Reference" Value="UserData/ScreenData" />
+    <Parameter Id="HostData" DataType="Reference" Value="UserData/HostData" />
+    <NextNode>SetData</NextNode>
+    <NextNode Outcome="4">HostQueryErrorHandler</NextNode>
+  </Node>
+  <Node NodeId="HostQueryErrorHandler" Assembly="" Component="BusinessExceptionHandler" RunAt="Client">
+    <NextNode>End</NextNode>
+  </Node>
+  <Node NodeId="End" Assembly="" Component="End" RunAt="Server">
+    <NextNode>True</NextNode>
+  </Node>
+</Workflow>

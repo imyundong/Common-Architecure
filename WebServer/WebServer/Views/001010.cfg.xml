@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PageConfig>
+  <Title>Cash Deposit</Title>
+  <TxnCode>001010</TxnCode>
+  <Columns>1</Columns>
+  <Fields>
+    <Field Name="Account" FieldType="account" IsMandatory="true" />
+    <Field Name="Amount" FieldType="amount" IsMandatory="true" Formatter="amount" />
+    <Field Name="PromoCode" Description="Promo Code" InputType="Combobox" FieldType="alphanumeric maxlen:2" />
+    <Field />
+    <Field Name="Remark" Width="500" />
+  </Fields>
+</PageConfig>

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Workflow>
+  <Node NodeId="CleanStart" Assembly="" Component="ClientInitial" RunAt="Client">
+    <NextNode>GetSystemParaemter</NextNode>
+  </Node>
+  <Node NodeId="GetSystemParaemter" Assembly="ServerDataAdapter" Component="ParameterProvider" RunAt="Server">
+    <Parameter Id="Parameter" DataType="Reference" Value="UserData/Parameter" />
+    <NextNode>GetPageData</NextNode>
+  </Node>
+  <Node NodeId="GetPageData" Assembly="ScreenControl" Component="GetPageData" RunAt="Server">
+    <Parameter Id="PageId" DataType="Value" Value="009001" />
+    <Parameter Id="PageData" DataType="Reference" Value="UserData/PageData" />
+    <NextNode>ShowScreen</NextNode>
+  </Node>
+  <Node NodeId="ShowScreen" Assembly="" Component="ShowScreen" RunAt="Client">
+    <NextNode>UserAuthentication</NextNode>
+  </Node>
+  <Node NodeId="UserAuthentication" Assembly="ServerDataAdapter" Component="DataQuery" RunAt="Server">
+    <Parameter Id="ScreenData" DataType="Reference" Value="UserData/ScreenData" />
+    <Parameter Id="HostData" DataType="Reference" Value="UserData/HostData" />
+	<NextNode Outcome="Error">HostQueryErrorHandler</NextNode>
+    <NextNode>SetData.03</NextNode>
+  </Node>
+  <Node NodeId="SetData.03" Assembly="ServerDataAdapter" Component="SetData" RunAt="Server">
+    <Parameter Id="Field" DataType="Reference" Value="UserData/ScreenData/TxnCode" />
+    <Parameter Id="Value" DataType="Value" Value="009600" />
+    <Parameter Id="Field1" DataType="Reference" Value="UserData/ScreenData/UserID" />
+    <Parameter Id="Value1" DataType="Reference" Value="UserData/HostData/UserId" />
+    <NextNode>GetUserInfo</NextNode>
+  </Node>
+  <Node NodeId="GetUserInfo" Assembly="ServerDataAdapter" Component="DataQuery" RunAt="Server">
+    <Parameter Id="ScreenData" DataType="Reference" Value="UserData/ScreenData" />
+    <Parameter Id="HostData" DataType="Reference" Value="UserData/HostData" />
+    <NextNode>SystemInitial</NextNode>
+  </Node>
+  <Node NodeId="SystemInitial" Assembly="" Component="SystemInitial" RunAt="Client">
+    <NextNode>GetUserPage</NextNode>
+  </Node>
+  <Node NodeId="GetUserPage" Assembly="ScreenControl" Component="GetPageData" RunAt="Server">
+    <Parameter Id="PageId" DataType="Value" Value="032000" />
+    <Parameter Id="PageData" DataType="Reference" Value="UserData/PageData" />
+    <NextNode>ShowScreen</NextNode>
+  </Node>
+  <Node NodeId="DisplayUserPage" Assembly="" Component="ShowScreen" RunAt="Client">
+    <NextNode>End</NextNode>
+  </Node>
+  <Node NodeId="SetData.02" Assembly="ServerDataAdapter" Component="SetData" RunAt="Server">
+    <Parameter Id="Field" DataType="Reference" Value="UserData/Field" />
+    <Parameter Id="Value" DataType="Value" Value="1" />
+    <NextNode Outcome="Successful">End</NextNode>
+	<NextNode>End</NextNode>
+  </Node>
+  <Node NodeId="HostQuery" Assembly="ServerDataAdapter" Component="DataQuery" RunAt="Server">
+    <Parameter Id="ScreenData" DataType="Reference" Value="UserData/ScreenData" />
+    <Parameter Id="HostData" DataType="Reference" Value="UserData/HostData" />
+    <NextNode>SetData</NextNode>
+	<NextNode Outcome="4">HostQueryErrorHandler</NextNode>
+  </Node>
+  <Node NodeId="HostQueryErrorHandler" Assembly="" Component="BusinessExceptionHandler" RunAt="Client">
+    <NextNode>End</NextNode>
+  </Node>
+  <Node NodeId="SetData" Assembly="ServerDataAdapter" Component="SetData" RunAt="Server">
+    <Parameter Id="Field" DataType="Reference" Value="UserData/Field" />
+    <Parameter Id="Value" DataType="Reference" Value="@UserData/FieldName" />
+    <NextNode>FillData</NextNode>
+  </Node>
+  <Node NodeId="FillData" Assembly="" Component="FillData" RunAt="Client">
+    <NextNode>End</NextNode>
+  </Node>
+  <Node NodeId="GetHostQueryData" Assembly="ServerDataAdapter" Component="DataQuery" RunAt="Server">
+    <Parameter Id="ScreenData" DataType="Reference" Value="UserData/ScreenData" />
+    <Parameter Id="HostData" DataType="Reference" Value="UserData/HostData" />
+    <NextNode>SetData.001</NextNode>
+  </Node>
+  <Node NodeId="SetData.001" Assembly="ServerDataAdapter" Component="SetData" RunAt="Server">
+    <Parameter Id="Field" DataType="Reference" Value="UserData/Field" />
+    <Parameter Id="Value" DataType="Reference" Value="@UserData/FieldName" />
+    <NextNode>SetClientData</NextNode>
+  </Node>
+  <Node NodeId="SetClientData" Assembly="" Component="FillData" RunAt="Client">
+    <NextNode>End</NextNode>
+  </Node>
+  <Node NodeId="End" Assembly="" Component="End" RunAt="Client">
+    <NextNode>End</NextNode>
+  </Node>
+  <Node NodeId="Start" Assembly="ScreenControl" Component="GetPageData" RunAt="Server">
+    <Parameter Id="PageId" DataType="Reference" Value="UserData/ScreenData/TxnCode" />
+    <Parameter Id="PageData" DataType="Reference" Value="UserData/PageData" />
+    <NextNode>ShowScreen.01</NextNode>
+  </Node>
+  <Node NodeId="ShowScreen.01" Assembly="" Component="ShowScreen" RunAt="Client">
+    <NextNode>HostQuery.01</NextNode>
+  </Node>
+  <!-- Standard Host Query -->
+  <Node NodeId="HostQuery.01" Assembly="ServerDataAdapter" Component="DataQuery" RunAt="Server">
+    <Parameter Id="ScreenData" DataType="Reference" Value="UserData/ScreenData" />
+    <Parameter Id="HostData" DataType="Reference" Value="UserData/HostData" />
+    <NextNode>End</NextNode>
+    <NextNode Outcome="SUP">OverrideRequired</NextNode>
+    <NextNode Outcome="Error">HostQueryErrorHandler</NextNode>
+    <NextNode Outcome="OK">OKMessageHandler</NextNode>
+    <NextNode Outcome="Print">PrintHandler</NextNode>
+    <NextNode Outcome="Display">DisplayHandler</NextNode>
+  </Node>
+  <Node NodeId="DisplayHandler" Assembly="ScreenControl" Component="GetPageData" RunAt="Server">
+    <Parameter Id="PageId" DataType="Reference" Value="UserData/ScreenData/PageId" />
+    <Parameter Id="PageData" DataType="Reference" Value="UserData/PageData" />
+    <NextNode>ShowScreen.01</NextNode>
+  </Node>
+  <Node NodeId="PrintHandler" Assembly="" Component="Print" RunAt="Client">
+    <NextNode>End</NextNode>
+  </Node>
+  <Node NodeId="OKMessageHandler" Assembly="" Component="OK" RunAt="Client">
+    <NextNode>End</NextNode>
+  </Node>
+  <Node NodeId="OverrideRequired" Assembly="WorkflowDistributor" Component="WorkflowConnector" RunAt="Server">
+    <Parameter Id="Workflow" DataType="Value" Value="SupervisorOverride" />
+	  <Parameter Id="Node"     DataType="Value" Value="Start" />
+	  <NextNode>End.False</NextNode>
+    <NextNode Outcome="True">HostQuery.01</NextNode>
+  </Node>
+  <Node NodeId="End.False" Assembly="" Component="End" RunAt="Client">
+    <NextNode>False</NextNode>
+  </Node>
+  <Node NodeId="PageQuery" Assembly="ServerDataAdapter" Component="DataQuery" RunAt="Server">
+    <Parameter Id="ScreenData" DataType="Reference" Value="UserData/ScreenData" />
+    <Parameter Id="HostData" DataType="Reference" Value="UserData/HostData" />
+    <NextNode>GetPage</NextNode>
+    <NextNode Outcome="Error">PageQueryErrorHandler</NextNode>
+  </Node>
+  <Node NodeId="PageQueryErrorHandler" Assembly="" Component="PageQueryErrorHandler" RunAt="Client">
+    <NextNode>End</NextNode>
+  </Node>
+  <Node NodeId="GetPage" Assembly="ScreenControl" Component="GetPageData" RunAt="Server">
+    <Parameter Id="PageId" DataType="Reference" Value="UserData/ScreenData/NextPageId" />
+    <Parameter Id="PageData" DataType="Reference" Value="UserData/PageData" />
+    <NextNode>FillPageData</NextNode>
+  </Node>
+  <Node NodeId="FillPageData" Assembly="" Component="FillPageData" RunAt="Client">
+    <NextNode>End</NextNode>
+  </Node>
+</Workflow>

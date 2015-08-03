@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zip Html Content</title>
+    <script type="text/javascript" src="Scripts/zip.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-1.11.1.js"></script>
+</head>
+<body>
+    <h1>This is the demo for zipping html content</h1>
+    <hr />
+    <div>Content</div>
+    <script>
+        $(document).ready(function () {
+           var a = 255
+           alert(a)
+           var t = "504B341408880D57DF046000000000000D00050616765446174612E68746D6C9D555D6F9B30147DCFAFB0AC696A273524DDD26A1D415AD74E429AB46A6D1FF684C3689156333DB34CD7EFDAEDCD6880342D522DC2FDF73B83EE297F409920C6CC712A12FB2891542725A194CB5CA965B14444F2825846315A2BBDCA855A9F703AC7A793E96C723E3D9BCE3E9D7D3C9F34D714A3922C98B984C3EFB77A89A29CAB68668341A21B8FC5F68B9152CA83FADEB8C24E5F49C6A4D54C70C31058B2CA5855F0BF8C3A279444CDE532A370791ADD8462036A690C7F3DFAAD2A6D98C8C309C28C5CDCFF2C82522EA1E79FF4C6BEB01ADA9D282DB39B6BA62183A243BAB6CDFBC8517B44484DFCB95546B89EEDD3E866A9AC82523A9BE3B80624CE0EC89B78FF3F5B8948B76F73B6D7597E958BCB5126DB6489A04F167737DB0E0CF8351933ECB0CC7DE78DD801B3E36858643FB0CA47D87A971A03597765F6A19852910EA7E65F9AA0123BA8834389E8B57A4FAE74D1EF6A5A1AF479BF202913512CCBCAFA5142D7452936C6ECA807AE7FE2DCA74A52C0467023105FE127FE34FB5371CD28A27CC12D2AB8144C5ECC6027992B1A51294E939FEF0AB9C3E88188ACA604C33AC733BFA7617EEA3F895B09FC6E1F5485DA6EA054DD894E02D9BBA2F237D33BED68C66A1444893DB57C4A5A59AB245232133C5BCDF1BBF137C14144C6B74CD23B4DA42199E54A1E1D3FC1A8337023215F2BBBBCAC2DD1FB5E0126DDBFBE14318F48F6DCF86F0E6966C2E395E91BD2807D9C6D95ACBD9D9F6B58ED49BCA7AB6287412B23F45EA6A6FCB23F26342591D19DDE3C539730F0E6FED43EB9E85790D674184B6C6592946834485D7FAF05C78363CD53341E7D4B314C5C72ADB5D25B8EEF870ADC2325743B4F6261810A6CCEAA5B7F4717EE5C6B8276222E89CC8CE072856E998633CF9D6E3BDD2F7EAE3E761C1C6A3CE52B5BC4C9D53E76CDBCB67EC18C12281B5DDDA5B4F2C412138ADFDB98EE81F1F250B45E9BC7D1A87EF87504B7830341C28DA20027900504B121401408880D57DF04630341C28DA20027900D0000000000000000050616765446174612E68746D6C504B56000010103B0"
+            alert(t.length)
+            //zip.workerScriptsPath = "Scripts/"
+            //// use a BlobWriter to store the zip into a Blob object
+            //zip.createWriter(new zip.BlobWriter(), function(writer) {
+
+            //    // use a TextReader to read the String to add
+            //    writer.add("filename.txt", new zip.TextReader(window.document.body.innerHTML), function() {
+            //        // onsuccess callback
+
+            //        // close the zip writer
+            //        writer.close(function(blob) {
+            //            // blob contains the zip file as a Blob object
+            //            alert(blob.size)
+            //            //var a = new Uint16Array(blob, 0, blob.size)
+            //            var reader = new FileReader();
+            //            reader.onloadend = function (evt) {
+            //                var array = new Uint8Array(evt.target.result, 0, evt.loaded);
+            //                var t = array;
+            //                // var array = new Uevt.target.result
+            //            }
+            //            reader.readAsArrayBuffer(blob)
+            //        });
+            //    }, function(currentIndex, totalIndex) {
+            //        // onprogress callback
+            //    });
+            //}, function(error) {
+            //    // onerror callback
+            //    alert("error");
+            //});
+        })
+    </script>
+</body>
+</html>

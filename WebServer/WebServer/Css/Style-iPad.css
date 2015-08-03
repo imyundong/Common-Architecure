@@ -1,0 +1,28 @@
+body {
+}
+
+#bl_notification {
+	display: none;
+}
+
+.bl_transactions_login#bl_transactions {
+	padding-right: 10px;
+}
+
+.bl_search_area_3 {
+    display: none;
+}
+
+#bl_notify_items, #bl_calender, #bl_chatting {
+	display: none;
+}
+
+.bl_search_area_2 {
+    margin-right: 0px;
+}
+
+#notification_summary {
+    list-style: none;
+    display: inline-block;
+}
+

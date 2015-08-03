@@ -1,0 +1,11 @@
+﻿Table ATMCTL
+Y Y TermId    VARCHAR  8   ""
+Y Y BranchId INT              4   0
+Y Y TelrNo     VARCHAR 10 ""
+N N ShopLocation VARCHAR 50 ""
+N N GroupId  VARCHAR 3 ""
+End Table
+
+Query ByBranch
+Key = BranchId
+End Query

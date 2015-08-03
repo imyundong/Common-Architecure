@@ -1,0 +1,9 @@
+﻿
+Table BGLACCOUNTQUOTAPR
+Y Y TITLEID         VARCHAR  10  ""
+N N LIMITAMOUNT         INT  4  0
+End Table
+
+Query ByTITLEID
+Key   = TITLEID
+End Query

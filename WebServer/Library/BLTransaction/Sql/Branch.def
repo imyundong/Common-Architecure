@@ -1,0 +1,24 @@
+﻿Table Branch
+Y Y BranchId           INT      4    0
+N N BranchName         VARCHAR  MAX  ""
+N N Parent             INT      8    0
+N N BranchCategoryId   INT      4    0
+End Table
+
+Query ByParent
+Key   = Parent
+Order = BranchId`ASC
+End Query
+
+Query ByBrahchIdGetName
+Key   = BranchId
+End Query
+
+Query ByAll
+Order = BranchId`ASC
+End Query
+
+Query ByBranchCategoryId
+Key   = BranchId
+Order = BranchId`ASC
+End Query
