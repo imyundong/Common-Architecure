@@ -1,8 +1,0 @@
-﻿Table ExBranch
-Y Y ExBranchNo       INT      4    0
-N N ExBranchName     VARCHAR  MAX  ""
-End Table
-
-Query ByExBranchName
-Key = ExBranchName`LIKE
-End Query

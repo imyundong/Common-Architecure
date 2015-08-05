@@ -1,8 +1,0 @@
-﻿Table RoleMapping
-N N ETabRole     VARCHAR 16 ""
-N N TellerRoleId INT     4  0
-End Table
-
-Query GetRoleByETabRole
-Key = ETabRole
-End Query

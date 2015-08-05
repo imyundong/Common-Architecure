@@ -1,8 +1,0 @@
-﻿Table UserRole
-N N UserId   INT   4
-N N RoleId   INT   4
-End Table
-
-Query ByUserId
-Key = UserId
-End Query

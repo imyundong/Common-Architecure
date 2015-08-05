@@ -1,6 +1,0 @@
-﻿Table PluginList
-Y Y PluginId           INT      4  0
-N N PluginName         VARCHAR 50  ""
-N N PluginFriendlyName VARCHAR 50  ""
-N N PluginIcon         INT      4  0
-End Table

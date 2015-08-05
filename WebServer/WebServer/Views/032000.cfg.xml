@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<PageConfig>
-  <Title>User Authentication</Title>
-	<TxnCode>032000</TxnCode>
-	<Link>Views/032000.html</Link>
-  <TransmitButton>false</TransmitButton>
-  <CloseButton>false</CloseButton>
-</PageConfig>

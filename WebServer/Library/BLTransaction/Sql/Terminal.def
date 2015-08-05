@@ -1,4 +1,0 @@
-﻿Table Terminal
-Y Y TerminalId         INT      4    0
-N N BranchId           INT      4    0
-End Table

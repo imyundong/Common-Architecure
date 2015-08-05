@@ -1,6 +1,0 @@
-﻿Table OverrideList
-Y Y TxnCode          VARCHAR   10
-Y Y BranchCategory   INT       4
-Y Y TellerRole       INT       4
-Y Y OverrideCode     VARCHAR   10
-End Table

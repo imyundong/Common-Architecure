@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ErrorMessage>
-  <Error Code="9"    Message="Fail to Connect to Host" />
-  <Error Code="19"   Message="Invalid Transaction Code" />
-  <Error Code="501"  Message="Invalid User Id or Password" />
-  <Error Code="502"  Message="Transaction Parameter is not Defined" />
-  <Error Code="504"  Message="Invalid User Token" />
-  <Error Code="9999" Message="Unknown System Issue, Please Contact With Administrator" />
-</ErrorMessage>

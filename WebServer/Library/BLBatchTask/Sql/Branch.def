@@ -1,4 +1,0 @@
-﻿Table Branch<Serializable>
-Y Y BranchId           INT      4    0
-N N BranchStatus       VARCHAR  MAX  ""
-End Table

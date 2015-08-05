@@ -1,5 +1,0 @@
-﻿Table HostTellerMapping
-Y Y UserId     INT      4  0
-Y Y HostId     INT      4  0
-N N HostTeller VARCHAR  16 0
-End Table

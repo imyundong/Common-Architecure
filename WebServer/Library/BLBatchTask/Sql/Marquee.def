@@ -1,9 +1,0 @@
-﻿#SQLServer
-#Key   = TEST_DATE`>=`CONVERT(varchar(8), @KEY, 112)`ToString("YYYYmmDD")
-#Oracle
-#Key   = TEST_DATE`>=`TO_CHAR(@KEY, 'YYYYMMDD')`ToString("YYYYmmDD")
-
-Table Marquee
-Y Y SystemId                 INT      4   0
-N N Content                  VARCHAR  50  ""
-End Table

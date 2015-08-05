@@ -1,8 +1,0 @@
-﻿Table UserPlugin
-Y Y UserId             INT      4  0
-Y Y PluginId           INT      4  0
-End Table
-
-Query ByUserId
-Key = UserId
-End Query
