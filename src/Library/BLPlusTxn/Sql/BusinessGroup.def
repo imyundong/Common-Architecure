@@ -1,0 +1,8 @@
+﻿Table BusinessGroup
+N N BusinessGroupId  INT     4 0
+N N TxnCode          VARCHAR 10
+End Table
+
+Query ByBusinessGroupId
+Key = BusinessGroupId`IN
+End Query

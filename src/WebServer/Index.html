@@ -1,0 +1,420 @@
+﻿<!Doctype html>
+<html>
+    <head>
+        <title>Bancslink+ Integrated Authentication Platform</title>
+        <link rel="stylesheet" href="CSS/Style.css" media="screen and (min-width: 860px)" />
+        <link rel="stylesheet" href="CSS/Animate.css" />
+        <link rel="stylesheet" href="CSS/Transactions.css" />
+    </head>
+    <body>
+        <header>
+            <div id="bl_logo">
+                <img alt="System Menu" src="Images/Menu.fw.png" />
+                <a>BANCSLINK</a><img alt="System Logo" id="bl_logo_image_small" src="Images/Logo_Small.fw.png" />
+            </div>
+            <div id="bl_toolbar">
+                <div id="bl_user_info" class="hidden">
+                    <ul>
+                        <li>
+                            <img alt="Lock Screen" src="../Images/Icon_User.fw.png" /><span id="bl_username">Miachel Jackson</span>(<span id="bl_user_id">38378</span>)
+                        </li>
+                        <li>
+                            <img alt="Lock Screen" src="../Images/Tool_Lock.fw.png" />Lock
+                        </li>
+                    </ul>
+                </div>
+                <div id="bl_clock"></div>
+            </div>
+            <div id="bl_system">
+                <div id="bl_sys_name" style="text-align: center">
+                    <img alt="User Icon" src="Images/Icon_User.fw.png" />
+                    <span id="bl_seprator" class="hidden"> | </span><span id="bl_system_name"></span> <span id="bl_system_version"></span>
+                </div>
+            </div>
+            <div class="bl_main_logo" id="bl_main_logo">
+                <h1>BANCSLINK<img alt="Bancslink Logo" src="Images/Logo_Big.fw.png" /></h1>
+            </div>
+        </header>
+        <div id="bl_container">
+            <div id="bl_transactions">
+                <div id="page_1" class="bl_txn">
+                </div>
+            </div>
+        </div>
+        <div id="bl_nav" class="hidden" style="z-index:99">
+            <div id="bl_txn_tabs">
+                <div id="bl_user_customer_tab">
+                    <ul>
+                        <li id="bl_txntab_1" class="tab_selected">
+                            <img alt="User Icon" src="../Images/Icon_UserProfile.fw.png" /><span>USER PROFILE</span>
+                        </li>
+                        <li id="bl_txntab_2">
+                            <img alt="User Icon" src="../Images/Icon_CustProfile.fw.png" /><span>CUSTOMER PROFILE</span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="bl_txn_seperator">
+                    <img alt="User Icon" src="../Images/Icon_Txn.fw.png" /><span>TRANSACTIONS</span>    
+                </div>
+                <div id="bl_txn_tab">
+                    <ul>
+                        <li id="bl_txntab_3">
+                            <img src="../Images/Icon_Transaction.fw.png" />
+                            <span>001010 : CASH DEPOSIT</span>
+                            <img class="bl_btn_close_tab" src="Images/Icon_Close.fw.png" />
+                        </li>
+                        <li id="bl_txntab_new">
+                            <img src="../Images/Icon_New.fw.png" />
+                            <span>CREATE NEW TRANSACTION</span>
+                            <img class="bl_btn_close_tab hidden" src="Images/Icon_Close.fw.png" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- to do -->
+            <div id="bl_search_area">
+                <div class="bl_search_area_1">
+                    <span>SEARCH</span>
+                    <input name="Search" placeholder="Transaction/Account/Customer" id="bl_search" />
+                    <img alt="Search" src="../Images/Tool_Search.fw.png" />
+                </div>
+                <div class="bl_search_area_2">
+                    <div id="bl_user_menu"></div>
+                    <div id="bl_user_toolbar">
+                        <ul id="bl_user_plugins">
+                        </ul>
+                        <ul id="notification_summary">
+                            <li id="bl_notes_notification">
+                                <img src="Icons/Icon7.png" />
+                                <div class="notification_count">
+                                    <a>3</a>
+                                </div>
+                            </li>
+                            <li id="bl_sms_notification">
+                                <img src="Icons/Icon8.png" />
+                                <div class="notification_count">
+                                    <a>2</a>
+                                </div>
+                            </li>
+                            <li id="bl_sup_notification">
+                                <img src="Icons/Icon11.png" />
+                                <div class="notification_count hidden">
+                                    <a>3</a>
+                                </div>
+                            </li>
+                            <li id="bl_task_notification">
+                                <img src="Icons/Icon9.png" />
+                                <div class="notification_count">
+                                    <a>9+</a>
+                                </div>
+                            </li>
+                            <li id="bl_broadcast_notification">
+                                <img src="Icons/Icon10.png" />
+                                <div class="notification_count hidden">
+                                    <a>2</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bl_search_area_3">
+                    <img id="notification_btn" alt="Notification Button" src="../Images/Notification_Btn.fw.png" />
+                    <span>NOTIFICATION CENTER</span>
+                </div>
+            </div>
+        </div>
+        <div id="bl_notification" class="hidden">
+            <!-- to do -->
+            <div id="bl_chatting">
+                <div id="bl_chatting_area">
+                    <ul>
+                        <li>
+                            <div class="bl_chatting_user_icon"><img alt="User Head Photo" src="Images/Icon_User_Photo.fw.png" /></div>
+                            <div class="bl_chatting_message">
+                                <div class="bl_chatting_message_date">
+                                    1 MIN AGO
+                                </div>
+                                <div class="bl_chatting_message_content">
+                                    <p>
+                                        Please Approve The IBD Request ASAP.
+                                        :)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bl_chatting_user_name">Aaron</div>
+                            <div class="bl_chatting_aarow"><img src="Images/Icon_Aarow.fw.png" /></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="bl_chatting_control">
+                    <input id="bl_chatting_content" /><input id="bl_chatting_send" value="SEND" type="button" />
+                </div>
+            </div>
+            <div id="bl_calender">
+                <p class="calender_header">
+                    <span id="calender_month">March 2015</span><img src="Images/Icon_Expander.fw.png" />
+                </p>
+                <p>
+                    <table class="calender_day">
+                        <tr>
+                            <th>
+                                S
+                            </th>
+                            <th>
+                                M
+                            </th>
+                            <th>
+                                T
+                            </th>
+                            <th>
+                                W
+                            </th>
+                            <th>
+                                T
+                            </th>
+                            <th>
+                                F
+                            </th>
+                            <th>
+                                S
+                            </th>
+                        </tr>
+                        <tr>
+                            <td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span></span></td><td><span>1</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>2</span></td>
+                            <td><span>3</span></td>
+                            <td><span>4</span></td>
+                            <td><span>5</span></td>
+                            <td><span>6</span></td>
+                            <td><span>7</span></td>
+                            <td class="calender_remark"><span>8</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>9</span></td>
+                            <td><span>10</span></td>
+                            <td><span>11</span></td>
+                            <td><span>12</span></td>
+                            <td><span>13</span></td>
+                            <td><span>14</span></td>
+                            <td><span>15</span></td>
+                        </tr>
+                        <tr>
+                            <td class="calender_reminder calender_today"><span>16</span></td>
+                            <td><span>17</span></td>
+                            <td><span>18</span></td>
+                            <td class="calender_reminder"><span>19</span></td>
+                            <td class="calender_reminder calender_remark"><span>20</span></td>
+                            <td><span>21</span></td>
+                            <td><span>22</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>23</span></td>
+                            <td><span>24</span></td>
+                            <td><span>25</span></td>
+                            <td><span>26</span></td>
+                            <td><span>27</span></td>
+                            <td><span>28</span></td>
+                            <td class="calender_remark"><span>29</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>30</span></td>
+                            <td class="calender_remark"><span>31</span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                        </tr>
+                    </table>
+                </p>
+            </div>
+            <div id="bl_notify_items">
+                <ul>
+                    <li>
+                        <div bind-attr="NotificationCategory:category" class="bl_notify_title">
+                            <img class="title_icon" />
+                            <a bind-item="NotificationTitle"></a>
+                            <div bind-item="NotificationCount" class="notification_count" >3</div>
+                        </div>
+                        <ul class="hidden">
+                            <li>
+                                <div class="bl_notify_item_header" bind-item="NotificationHeader"></div>
+                                <div class="bl_notify_item_author"><a bind-item="NotificationAuthor"></a>(<a bind-item="NotificationAuthorId"></a>)</div>
+                                <div class="bl_notify_item_desc" bind-item="NotificationDesc"></div>
+                                <div class="bl_notify_item_date" bind-item="NotificationDate"></div>       
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <div id="bl_footer_bg"></div>
+            <div id="bl_corp_info">
+                <div id="bl_tcs_logo">
+                    <img src="Images/TCS_Logo.fw.png" alt="TCS Logo" />
+                </div>
+                <div id="bl_group_info">
+                    <p style="font-size: 9pt" class="bl_crop_info">
+                        ©2015 Tata Consultancy Services Financial Solutions (TCSFS)
+                    </p>
+                    <p class="bl_crop_info">
+                        Bancslink Product Team!
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <div id="bl_debug" class="hidden">
+            Debug Mode : On
+            <ul id="bl_debug_msg_list">
+
+            </ul>
+        </div>
+        <div class="hidden bl_search_result" >
+            <ul>
+                <!--
+                <li style="height: 38px; padding-top: 5px; padding-left: 10px;">
+                    <img src="Images/Icon_Transaction.fw.png">
+                    001010 : Cash Deposit
+                </li>
+                -->
+            </ul>
+        </div>
+        <script src="Scripts/jquery-1.11.1.js"></script>
+        <script src="Scripts/jquery-validation-0.7.1.js"></script>
+        <script src="Scripts/jquery-blockUI.js"></script>
+        <script src="Scripts/bl-library.js"></script>
+        <script src="Scripts/bl-utility.js"></script>
+        <script src="Scripts/zip.js"></script>
+        <script src="Scripts/bl-client-workflow.js"></script>
+        <script>
+            $(document).ready(function () {
+                setInterval(getLocaleTime, 1000);
+                
+                $(document).on("dragover", function () {
+                    event.preventDefault();
+                });
+
+                $("#login_1").val_bind();
+                $.Workflow.CleanStart();
+
+                $("#bl_search").on("focus", function () {
+                    $(".bl_search_result").fadeToggle(500);
+                    bl_search()
+                })
+
+                $("#bl_search").on("keyup", function () {
+                    bl_search()
+                })
+
+                //var mouseover = false;
+                $("#bl_search").on("blur", function () {
+                    $(".bl_search_result").fadeToggle(500);
+                })
+
+                //$(".bl_search_result").on("mouseover", function () {
+                //    mouseover = true;
+                //})
+
+                //$(".bl_search_result").on("mouseleave", function () {
+                //    mouseover = false;
+                //})
+
+                if (isMobile.iOS() == true) {
+                    $(window.document.head).append('<link rel="stylesheet" href="CSS/Style-iPad.css" />')
+                    // iPad
+                    if (isMobile.iPad() == true) {
+                        $(window.document.head).append('<meta name="viewport" content="width=device-width, minimum-scale=0.8, maximum-scale=0.8, user-scale=no" />');
+                    } else {
+                        // iPhone 
+                        $(window.document.head).append('<meta name="viewport" content="width=device-width, minimum-scale=0.7, maximum-scale=0.7, user-scale=no" />');
+                    }
+                }
+
+                $.Workflow.HostQuery(new WorkflowDataObject, "999992", null, 0, function (FlowObject) {
+                    $("#bl_system_name").html(FlowObject.FlowData.UserData.HostData.SystemName);
+                    $("#bl_system_version").html(FlowObject.FlowData.UserData.HostData.SystemVersion);
+                })
+
+                var link = window.document.createElement("link");
+                $(link).attr("rel", "stylesheet").attr("href", "CSS/Disable-Notification.css")
+                
+                $("#notification_btn").on("click", function () {
+                    if ($("#bl_notification").css("display") != "none") {
+                        $(this).attr("src", "Images/Notification_Btn_Op.fw.png");
+                        $(".bl_search_area_3").addClass("animated");
+                        $(window.document.head).append(link)
+                    } else {
+                        $(this).attr("src", "Images/Notification_Btn.fw.png");
+                        $(link).remove();
+                    }
+                    
+                })
+            })
+
+            var SelectedRow = 0;
+
+            function bl_search() {
+
+                if (event.keyCode == 40) {
+                    SelectedRow++
+                    if ($(".bl_search_result ul li").length < SelectedRow + 1) SelectedRow--;
+
+                    $(".bl_search_result ul li").removeClass("selected");
+                    $(".bl_search_result ul li:eq(" + SelectedRow + ")").addClass("selected");
+                    return;
+                } else if (event.which == 38) {
+                    SelectedRow--;
+                    if (SelectedRow < 0) SelectedRow = 0;
+                    $(".bl_search_result ul li").removeClass("selected");
+                    $(".bl_search_result ul li:eq(" + SelectedRow + ")").addClass("selected");
+                    return;
+                }
+                SelectedRow = 0;
+                $(".bl_search_result ul li").remove();
+
+                if ($("#bl_search").val()) {
+                    var result_count = 0;
+                    // for Taiwan Use Only
+                    var val = $("#bl_search").val();
+
+                    if (val.length == 10 && !isNaN(val.substr(1, 9))) {
+                        // Might be ID Number
+                        result_count += 1
+                        $(".bl_search_result ul").append("<li id='search_result_" + result_count + "'><img class='loading' src='Images/Icon_User.fw.png' /> ID Number : " + val + "</li>")       
+                        $("#search_result_" + result_count).off("click").on("click", function () {
+                            $.Workflow.OpenTransaction("CustomerProfile", true);
+                        })
+                    }
+
+                    $("#bl_user_menu a:contains(" + $("#bl_search").val() + ")[href]").each(function (idx, item) {
+                        if ($(this).attr("href").length == 0) return;
+                        result_count++;
+                        var li = "<li id='search_result_" + result_count + "'><img src='Images/Icon_Transaction_w.fw.png' /> " + $(this).find("span").html() + "</li>"
+
+                        $(".bl_search_result ul").append(li);
+                        $("#search_result_" + result_count).off("click").on("click", function () {
+                            $.Workflow.OpenTransaction($(item).attr("txn-code"));
+                        })
+
+                        if (result_count > 10) return false;
+                    })
+
+                    if (result_count == 0) {
+                        $(".bl_search_result ul").append("<li class='norecord'>:( oooooooops, record not found</li>")
+                    } else {
+                        $(".bl_search_result ul li:eq(" + SelectedRow + ")").addClass("selected");
+                    }
+                } else {
+                    $(".bl_search_result ul").append("<li style='text-align: center'><img class='loading' src='Images/Loading.gif' /> Search for something...</li>")
+                }
+
+                if (event.which == 13) {
+                    $(".bl_search_result ul li:eq(" + SelectedRow + ")").click();
+                }
+            }
+        </script>
+    </body>
+ </html>

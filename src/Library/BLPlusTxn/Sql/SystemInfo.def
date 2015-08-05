@@ -1,0 +1,5 @@
+﻿Table SystemInfo
+Y Y SystemId   INT      4   0
+N N SystemName VARCHAR 50  ""
+N N Version    VARCHAR 50  ""
+End Table

@@ -1,0 +1,7 @@
+﻿Table Branch
+Y Y BranchId           INT      4    0
+N N BranchName         VARCHAR  50
+N N BranchCategory     INT      4
+N N Parent             INT      4
+N N ProvincialBranch   INT      4
+End Table

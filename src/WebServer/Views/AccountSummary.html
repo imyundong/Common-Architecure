@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="account_summary" style="width: 510px;">
+        <div style="width: 390px; height: 35px; display: inline-block;">
+            <span style="font-weight: bold;">Account No</span> : <a bind="Account"></a>(<a bind="CustomerName"></a>) 
+        </div>
+        <div style="width: 110px; text-align: right; display: inline-block;"><a bind="AccountTypeDescription"></a></div>
+        <div style="margin: -10px; padding: 10px; height: 90px; border-top-color: rgb(136, 136, 136); border-top-width: 1px; border-top-style: solid; background-color: white;">
+            <table style="padding: 0px;">
+                <tbody>
+                    <tr style="height: 26px;">
+                        <td style="width: 100px; font-weight: bold;">Balance</td>
+                        <td><a bind="Currency"></a> : <a bind="CurrentBalance"></a></td>
+                        <td></td>
+                        <td style="padding: 0px; width: 205px; text-align: right;">
+                            <img style="width: 22px; height: 16px;" src="Images/Icon_Card.fw.png"> <a bind="PassbookNo"></a> <img style="width: 22px; height: 16px;" src="Images/Icon_More.fw.png">
+                        </td>
+                    </tr>
+                    <tr style="height: 26px;">
+                        <td> </td>
+                        <td><a bind="OpenDate"></a></td> 
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr style="height: 26px;"><td>Notification</td><td colspan="3"><a bind="Status"></a></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

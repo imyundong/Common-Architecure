@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FE5DBC8-9611-48E0-923C-22FC44D4265F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ServerPlatform.Transaction.StandardApplication.BLPlusAppServerTxn</RootNamespace>
+    <AssemblyName>BLPlusAppServerTxn</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\AppServer\AppServerLoader\bin\Debug\BLPlusAppServerTxn\</OutputPath>
+    <DocumentationFile>BLPlusAppServerTxn.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>BLPlusAppServerTxn.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CTxn009002.vb" />
+    <Compile Include="CTxn999989.vb" />
+    <Compile Include="CTxn099999.vb" />
+    <Compile Include="CTxn999990.vb" />
+    <Compile Include="CTxn999991.vb" />
+    <Compile Include="Database\CJournalView.vb" />
+    <Compile Include="Database\COverrideHistory.vb" />
+    <Compile Include="Database\COverrideStatus.vb" />
+    <Compile Include="Sql\CJournalViewStruct.vb" />
+    <Compile Include="Sql\COverrideHistoryStruct.vb" />
+    <Compile Include="Sql\COverrideStatusStruct.vb" />
+    <Compile Include="Sql\SQLServer\CJournalViewSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\COverrideHistorySQLServer.vb" />
+    <Compile Include="Sql\SQLServer\COverrideStatusSQLServer.vb" />
+    <Compile Include="TransactionBase.vb" />
+    <Compile Include="BancslinkTxnBase.vb" />
+    <Compile Include="CTxn009600.vb" />
+    <Compile Include="CTxn999992.vb" />
+    <Compile Include="CTxn999993.vb" />
+    <Compile Include="CTxn999995.vb" />
+    <Compile Include="CTxn999997.vb" />
+    <Compile Include="CTxn999996.vb" />
+    <Compile Include="CTxn999994.vb" />
+    <Compile Include="CTxnPreExecuted.vb" />
+    <Compile Include="CTxn999998.vb" />
+    <Compile Include="CTxn009001.vb" />
+    <Compile Include="CTxn999999.vb" />
+    <Compile Include="Database\CBranch.vb" />
+    <Compile Include="Database\CBusinessGroup.vb" />
+    <Compile Include="Database\CDBTest.vb" />
+    <Compile Include="Database\CHosts.vb" />
+    <Compile Include="Database\CHostTellerMapping.vb" />
+    <Compile Include="Database\CJournal.vb" />
+    <Compile Include="Database\COverrideCode.vb" />
+    <Compile Include="Database\COverrideList.vb" />
+    <Compile Include="Database\CPluginList.vb" />
+    <Compile Include="Database\CSystemInfo.vb" />
+    <Compile Include="Database\CSystemUser.vb" />
+    <Compile Include="Database\CTransactionPermission.vb" />
+    <Compile Include="Database\CTxnParameter.vb" />
+    <Compile Include="Database\CTxnPath.vb" />
+    <Compile Include="Database\CUserPlugin.vb" />
+    <Compile Include="Database\CUserRole.vb" />
+    <Compile Include="Database\CUserRoleCategory.vb" />
+    <Compile Include="Library\CToken.vb" />
+    <Compile Include="Sql\CBranchStruct.vb" />
+    <Compile Include="Sql\CBusinessGroupStruct.vb" />
+    <Compile Include="Sql\CDBTestStruct.vb" />
+    <Compile Include="Sql\CHostsStruct.vb" />
+    <Compile Include="Sql\CHostTellerMappingStruct.vb" />
+    <Compile Include="Sql\CJournalStruct.vb" />
+    <Compile Include="Sql\COverrideCodeStruct.vb" />
+    <Compile Include="Sql\COverrideListStruct.vb" />
+    <Compile Include="Sql\CPluginListStruct.vb" />
+    <Compile Include="Sql\CSystemInfoStruct.vb" />
+    <Compile Include="Sql\CSystemUserStruct.vb" />
+    <Compile Include="Sql\CTransactionPermissionStruct.vb" />
+    <Compile Include="Sql\CTxnParameterStruct.vb" />
+    <Compile Include="Sql\CTxnPathStruct.vb" />
+    <Compile Include="Sql\CUserPluginStruct.vb" />
+    <Compile Include="Sql\CUserRoleCategoryStruct.vb" />
+    <Compile Include="Sql\CUserRoleStruct.vb" />
+    <Compile Include="Sql\SQLServer\CBranchSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CBusinessGroupSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CDBTestSQLServer.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Sql\SQLServer\CHostsSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CHostTellerMappingSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CJournalSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\COverrideCodeSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\COverrideListSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CPluginListSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CSystemInfoSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CSystemUserSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CTransactionPermissionSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CTxnParameterSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CTxnPathSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CUserPluginSQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CUserRoleCategorySQLServer.vb" />
+    <Compile Include="Sql\SQLServer\CUserRoleSQLServer.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.vbproj">
+      <Project>{c02f3a36-20bd-4322-a551-355177c88cca}</Project>
+      <Name>Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerPlatform\ServerPlatform.vbproj">
+      <Project>{aacb53e0-185e-455f-87de-b7547318d8d0}</Project>
+      <Name>ServerPlatform</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sql\Branch.def" />
+    <Content Include="Sql\Branch.sql" />
+    <Content Include="Sql\BusinessGroup.def" />
+    <Content Include="Sql\BusinessGroup.sql" />
+    <Content Include="Sql\CNSDatabaseOneClick.exe" />
+    <Content Include="Sql\DBTest.def" />
+    <Content Include="Sql\DBTest.sql" />
+    <Content Include="Sql\Hosts.def" />
+    <Content Include="Sql\Hosts.sql" />
+    <Content Include="Sql\HostTellerMapping.def" />
+    <Content Include="Sql\HostTellerMapping.sql" />
+    <Content Include="Sql\Journal.def" />
+    <Content Include="Sql\Journal.sql" />
+    <Content Include="Sql\JournalView.def" />
+    <Content Include="Sql\JournalView.sql" />
+    <Content Include="Sql\OverrideCode.def" />
+    <Content Include="Sql\OverrideCode.sql" />
+    <Content Include="Sql\OverrideHistory.def" />
+    <Content Include="Sql\OverrideHistory.sql" />
+    <Content Include="Sql\OverrideList.def" />
+    <Content Include="Sql\OverrideList.sql" />
+    <Content Include="Sql\OverrideStatus.def" />
+    <Content Include="Sql\OverrideStatus.sql" />
+    <Content Include="Sql\PluginList.def" />
+    <Content Include="Sql\PluginList.sql" />
+    <Content Include="Sql\SystemInfo.def" />
+    <Content Include="Sql\SystemInfo.sql" />
+    <Content Include="Sql\SystemUser.def" />
+    <Content Include="Sql\SystemUser.sql" />
+    <Content Include="Sql\TransactionPermission.def" />
+    <Content Include="Sql\TransactionPermission.sql" />
+    <Content Include="Sql\TxnParameter.def" />
+    <Content Include="Sql\TxnParameter.sql" />
+    <Content Include="Sql\TxnPath.def" />
+    <Content Include="Sql\TxnPath.sql" />
+    <Content Include="Sql\UserPlugin.def" />
+    <Content Include="Sql\UserPlugin.sql" />
+    <Content Include="Sql\UserRole.def" />
+    <Content Include="Sql\UserRole.sql" />
+    <Content Include="Sql\UserRoleCategory.def" />
+    <Content Include="Sql\UserRoleCategory.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

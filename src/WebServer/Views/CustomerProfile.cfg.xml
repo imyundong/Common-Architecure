@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PageConfig>
+    <Title></Title>
+	<Link>Views/CustomerProfile.html</Link>
+  <TransmitButton>false</TransmitButton>
+  <CloseButton>false</CloseButton>
+</PageConfig>

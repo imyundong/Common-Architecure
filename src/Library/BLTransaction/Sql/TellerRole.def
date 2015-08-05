@@ -1,0 +1,12 @@
+﻿Table TellerRole
+N N TellerId       VARCHAR      8    ""
+N N TellerRoleId   INT      4    0
+End Table
+
+Query ByTellerRole
+Key   = TellerId,TellerRoleId
+End Query
+
+Query ByTellerId
+Key   = TellerId
+End Query

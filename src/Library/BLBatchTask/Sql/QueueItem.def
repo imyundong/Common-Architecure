@@ -1,0 +1,20 @@
+﻿#SQLServer
+#Key   = TEST_DATE`>=`CONVERT(varchar(8), @KEY, 112)`ToString("YYYYmmDD")
+#Oracle
+#Key   = TEST_DATE`>=`TO_CHAR(@KEY, 'YYYYMMDD')`ToString("YYYYmmDD")
+
+Table QueueItem
+N N QueueID           INT     4    0
+N N Description       VARCHAR MAX  ""
+N N XMLDocument       VARCHAR MAX  ""
+N N Priority          INT     4    0
+N N DateAdded         INT     4    0
+N N DateProcessed     INT     4    0
+N N Status            INT     4    0
+N N SenderTellerID    INT     4    0
+N N ProcessorTellerID INT     4    0
+N N Capability        INT     4    0
+N N TimeAdded         INT     4    0
+N N DateExpired       INT     4    0
+N N OriginalItemID    INT     4    0
+End Table

@@ -1,0 +1,16 @@
+﻿#SQLServer
+#Key   = TEST_DATE`>=`CONVERT(varchar(8), @KEY, 112)`ToString("YYYYmmDD")
+#Oracle
+#Key   = TEST_DATE`>=`TO_CHAR(@KEY, 'YYYYMMDD')`ToString("YYYYmmDD")
+
+Table TxnParameter
+Y Y TxnCode     VARCHAR    10    ""
+N N Description VARCHAR    50    ""
+N N Journalise  INT        4     0
+N N Host        INT        4     0
+N N IsReversal  INT        4     0
+N N ReversalTxn VARCHAR    10    0
+N N TxnPath     INT        4     -1
+N N TxnIcon     INT        4     0
+N N HostTxnCode VARCHAR    10    ""
+End Table

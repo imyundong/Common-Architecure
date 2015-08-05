@@ -1,0 +1,13 @@
+﻿Table BranchST
+Y Y BANKCD           VARCHAR  64  ""
+Y Y BRANCHCD           VARCHAR  64  ""
+N N UNIONBALANCINGSTATUS           VARCHAR  2  ""
+N N BALANCINGSTATUS           VARCHAR  2  ""
+N N BUSINESSDATE           VARCHAR  8  ""
+N N REMITTANCESTATUS           VARCHAR  2  ""
+N N FRXBALANCINGSTATUS           VARCHAR  2  ""
+End Table
+
+Query ByAllStatus
+Key   = BRANCHCD
+End Query

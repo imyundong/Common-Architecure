@@ -1,0 +1,32 @@
+.bl_control_area div {
+    padding-right: 300px;
+}
+
+.bl_search_area_3 {
+    width: 42px;
+}
+
+#bl_search_area .bl_search_area_3 span {
+    display: none;
+}
+
+#bl_transactions {
+    padding-right: 0px;
+}
+
+
+#notification_summary {
+    display: inline-block;
+}
+
+.bl_search_area_2 {
+    margin-right: 42px;
+}
+
+#bl_notification {
+	display: none;
+}
+
+.bl_transactions_login#bl_transactions {
+    padding-right: 0px;
+}

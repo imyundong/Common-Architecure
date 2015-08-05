@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script>
+        var Action032000 = function () { };
+        Action032000.prototype.SetAvailable = function (PluginImage, PluginId) {
+            var handler = this;
+            $(PluginImage).addClass("available");
+            $(PluginImage).off("mouseover").off("mouseleave").off("click");
+            $(PluginImage).fadeTo("slow", 1);
+
+            var li = $(PluginImage).parent().clone();
+            $("#bl_user_toolbar ul:eq(0)").append(li);
+            $(li).attr("id", "bl_plugin_" + PluginId)
+            $("#bl_plugin_" + PluginId).on("click", function () {
+                var offsetLeft = this.offsetWidth - 400 - 2;
+                var offsetTop = this.offsetHeight;
+                var offset = this;
+
+                while (offset) {
+                    offsetLeft += offset.offsetLeft;
+                    offsetTop += offset.offsetTop;
+                    offset = offset.offsetParent;
+                }
+                var dialog = window.document.createElement("div");
+                $(dialog).addClass("bl_dialog").attr("style", "top: " + offsetTop + "px; left: " + offsetLeft + "px; width:400px")
+                $(dialog).html("<div class='bl_dialog_title'><div style='float: left'><img class='bl_menu' src='Images/Menu.fw.png' /> Caculator</div><div style='float: right'><img class='close_button' src='Images/Close_Button.fw.png' /></div></div><div class='bl_dialog_content'><img class='loading' src='Images/Loading.gif' /> Loading Plugin...<br /><br /></div>")
+                $(dialog).find(".bl_dialog_title").attr("draggable", "true");
+
+                $.Client.PageIndex++;
+                $(dialog).attr("id", "dialog_page_" + $.Client.PageIndex)
+
+                // drag the window
+                var OffsetX = 0;
+                var OffsetY = 0;
+                $(dialog).find(".bl_dialog_title").on("dragstart", function () {
+                    $(dialog).addClass("seperated");
+                    $("#bl_plugin_" + PluginId).removeClass("actived");
+                    event.dataTransfer.setData("Text", $(dialog).attr("id"));
+                    OffsetX = event.clientX - $(event.target).parent()[0].offsetLeft;
+                    OffsetY = event.clientY - $(event.target).parent()[0].offsetTop;
+                })
+
+                $(document).off("drop");
+                $(document).on('drop', function () {
+                    var sourceid = event.dataTransfer.getData("Text");
+
+                    $("#" + sourceid).css("left", event.clientX - OffsetX);
+                    $("#" + sourceid).css("top", event.clientY - OffsetY);
+                });
+
+                $(window.document.body).append(dialog);
+                $(dialog).addClass("fadeIn animated slow").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                    $(this).removeClass("fadeIn animated");
+                });
+                $(dialog).find(".close_button").on("click", function () {
+                    if ($(this).hasClass("seperate") == false) {
+                        // need to reset plugin background in toolbar
+                        $("#bl_plugin_" + PluginId).removeClass("actived");
+                    }
+
+                    $(dialog).addClass("fadeOut animated slow").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                        $(this).removeClass("fadeOut animated");
+                    });
+                    $(dialog).remove();
+                })
+                $(this).addClass("actived")
+
+                $.Workflow.PageQuery(new WorkflowDataObject($(dialog).find(".bl_dialog_content")[0]), '', 'Caculator', {}, 0, 'Loading Plugin');
+            })
+
+            $(PluginImage).on("click", function () {
+                var url = $(PluginImage).attr("src");
+                $(PluginImage).attr("src", "Images/Loading.gif").css("width", "16px").css("height", "16px");
+
+                $(PluginImage).off("mouseover").off("mouseleave").off("click");
+                var FlowObject = new WorkflowDataObject(null);
+                FlowObject.FlowData.UserData.ScreenData = { ToUse : false, PluginId : PluginId }
+                $.Workflow.HostQuery(FlowObject, "999993", null , 0, function (FlowObject) {
+                    $(PluginImage).css("width", "").css("height", "").attr("src", url);
+                    if (FlowObject.FlowData.UserData.HostData.InUse == undefined || FlowObject.FlowData.UserData.HostData.InUse == true) {
+                        // update fail
+                    } else { handler.SetUnavailable(PluginImage, PluginId); }
+                });
+            })
+        }
+        Action032000.prototype.SetUnavailable = function (PluginImage, PluginId) {
+            var handler = this;
+
+            $(PluginImage).addClass("available");
+            $(PluginImage).off("mouseover").off("mouseleave").off("click");
+            $(PluginImage).fadeTo("slow", 0.5);
+
+            $(PluginImage).on("mouseover", function () { $(this).fadeTo("fast", 1) });
+            $(PluginImage).on("mouseleave", function () { $(this).fadeTo("fast", 0.5) });
+
+            $("#bl_plugin_" + PluginId).remove();
+
+            $(PluginImage).on("click", function () {
+                $(PluginImage).off("mouseover").off("mouseleave").off("click");
+                var url = $(PluginImage).attr("src");
+                $(PluginImage).attr("src", "Images/Loading.gif").css("width", "16px").css("height", "16px");
+
+                var FlowObject = new WorkflowDataObject(null);
+                FlowObject.FlowData.UserData.ScreenData = { ToUse: true, PluginId: PluginId }
+                $.Workflow.HostQuery(FlowObject, "999993", null, 0, function (FlowObject) {
+                    $(PluginImage).css("width", "").css("height", "").attr("src", url);
+                    if (FlowObject.FlowData.UserData.HostData.InUse == undefined || FlowObject.FlowData.UserData.HostData.InUse == false) {
+                        // update fail
+                    } else { handler.SetAvailable(PluginImage, PluginId); }
+                });
+            })
+        }
+        Action032000.prototype.Ready = function (Container) {
+            var handler = this;
+            // Get Available System
+            $.Workflow.PageQuery(new WorkflowDataObject($(".available_system")[0]), '999998', 'SystemList', {}, 0, 'Loading Available Systems', function (WorkflowObject) {
+                $.each($(Container).find(".available_system li"), function (idx, item) {
+                    $(this).find("img,a").on("click", function () {
+                        $.Workflow.HostQuery(new WorkflowDataObject(), "999989", null, 3, function (FlowObject) {
+                            setCookie("LoginToken", FlowObject.FlowData.UserData.HostData.LoginToken, 1);
+                            window.open(WorkflowObject.FlowData.UserData.HostData.SystemList[idx].SystemLink)
+                        });
+                        
+                        //window.open(WorkflowObject.FlowData.UserData.HostData.SystemList[idx].SystemLink)
+                    });
+                });
+            });
+            // Get User Plugin
+            $.Workflow.PageQuery(new WorkflowDataObject($(".available_tools")[0]), '999994', 'Plugin', {}, 0, 'Loading Available Plugins', function (WorkflowObject) {
+                var PluginList = WorkflowObject.FlowData.UserData.HostData.PluginList;
+                $.each($(WorkflowObject.Source).find("li"), function (idx) {
+                    var PluginImage = $(this).find("img")[0];
+                    $(PluginImage).attr("src", "Icons/Icon" + $(PluginImage).attr("src") + ".png")
+                    //alert(WorkflowObject.FlowData.UserData.HostData.PluginList[idx].Available);
+                    if (WorkflowObject.FlowData.UserData.HostData.PluginList[idx].Available == true) {
+                        handler.SetAvailable(PluginImage, WorkflowObject.FlowData.UserData.HostData.PluginList[idx].PluginId);
+                    } else {
+                        handler.SetUnavailable(PluginImage, WorkflowObject.FlowData.UserData.HostData.PluginList[idx].PluginId);
+                    }
+                })
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="bl_txn_user_info">
+        <div class="bl_user_img">
+            <img src="../Images/Icon_User_Photo_User.fw.png" />
+        </div>
+        <div class="bl_user_summary">
+            <div>
+                <h1 bind="Username">
+                    Miachle Jackson
+                </h1>
+            </div>
+            <div>
+                Employee ID:<span bind="AuthorizedUser">
+                    805035
+                </span>
+            </div>
+            <div class="bl_user_role">
+                <ul >
+                    <li bind="UserRole">
+                        <a bind-item="RoleId"></a> : <a bind-item="RoleDescription"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bl_user_details">
+            <h2>
+                <img src="Images/Icon_Transaction.fw.png" />
+                Details
+            </h2>
+            <hr />
+            <table>
+                <tr>
+                    <td>
+                        Branch
+                    </td>
+                    <td>
+                        <span bind="Branch">
+                            0060
+                        </span>
+                        : <span bind="BranchName">
+                            Taipei Songshan Branch
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Contact No
+                    </td>
+                    <td>
+                        <span bind="ContactNo">
+                            186 1234 5678
+                        </span>
+                        <img src="../Images/Icon_Remark.fw.png" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Last Login
+                    </td>
+                    <td>
+                        <span bind="LastLoginDate">
+                            2015/03/18 13:03:42
+                        </span>
+                        (<span bind="FailAttempts">
+                            3
+                        </span>
+                        )
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Device
+                    </td>
+                    <td>
+                        <span>
+                            <span bind="OSVersion"></span> | <img src="Images/Icon_Desktop.fw.png" style="height: 36px; width: 36px" />
+                            <span bind="UserClient"></span> (<span bind="Device"></span>)
+                        </span>
+                        | From <span bind="IPAddress">192.168.1.1</span>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <h2>
+                Available Systems
+            </h2>
+            <hr />
+            <div class="available_system">
+
+            </div>
+            <br />
+            <h2>
+                <img src="Images/Icon_Transaction.fw.png" />
+                Tools
+            </h2>
+            <hr />
+            <div class="available_tools">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

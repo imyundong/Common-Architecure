@@ -1,0 +1,6 @@
+﻿Table OverrideCode
+Y Y Code                VARCHAR  10  
+N N OverrideDescription VARCHAR  50
+N N Capability          INT      4
+N N Condition           VARCHAR  MAX
+End Table

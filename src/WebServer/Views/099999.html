@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body >
+    <div style="margin: -10px;">
+        <h1 style="padding: 10px; height: 50px; background-image: linear-gradient(to top, white, #f7f5e1);">System Journal</h1>
+        <form style="padding: 10px;">
+            <table class="txn_table">
+                <tbody>
+                    <tr>
+                        <td>Branch</td>
+                        <td><input name="UserBranch" style="width: 80px;" value="60"> Teller <input name="TellerId" style="width: 80px;" value="65674">
+                        <td>Terminal</td>
+                        <td><input name="Terminal" style="width: 100px;"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Account</td>
+                        <td><input name="Account" style="width: 240px;">
+                        <td>Currency</td>
+                        <td>
+                            <div class="sel_wrap">
+                                <label></label>
+                                <select name="Currency" class="select">
+                                    <option value="TWD">TWD : Taiwan Dollor</option>
+                                    <option value="CNY">CNY : Chinese Yuan</option>
+                                    <option value="USD">USD : US Dollar</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>
+                            <div class="sel_wrap">
+                                <label></label>
+                                <select name="Status" class="select">
+                                    <option>0 : Unknow</option>
+                                    <option>1 : Successul</option>
+                                    <option>2 : Fail</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>Txn Code</td>
+                        <td><input name="OriginalTxnCode" style="width: 100px" /></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Business Date</td>
+                        <td><input name="StartDate" style="width: 116px;" value="2015-07-06"><input name="EndDate" style="width: 116px; margin-left: -1px" value="2015-07-06"></td>
+                        <td>System Date</td>
+                        <td><input name="StartDate" style="width: 116px;" value="2015-07-06"><input name="StartDate" style="width: 116px; margin-left: -1px; " value="2015-07-06"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Journal Id</td>
+                        <td><input name="StartJournalId" style="width: 116px;" value=""><input name="EndJournalId" style="width: 116px; margin-left: -1px; " value=""></td>
+                        <td>Trace No</td>
+                        <td><input name="StartTraceNo" style="width: 116px;" value=""><input name="EndTraceNo" style="width: 116px; margin-left: -1px; " value=""></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td>
+                        <td><input name="StartAmount" style="width: 116px;" value=""><input name="EndAmount" style="width: 116px; margin-left: -1px; " value=""></td>
+                        <td></td>
+                        <td><button style="width: 180px;" type="button" onclick="$.Client.SendTransaction()">Query</button></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <div style="width: 100%; height: 280px; overflow-x:auto; position:relative; overflow-y: auto; scrollbar-base-color: #ffffff; scrollbar-shadow-color: #ffffff; ">
+                <table class="fix_header data_table" style="width: 2500px">
+                    <tr>
+                        <th>Journal Id</th>
+                        <th>Group</th>
+                        <th>Txn Code</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Error Code</th>
+                        <th>Error Description</th>
+                        <th>ProcTime</th>
+                        <th>Host</th>
+                        <th></th>
+                        <th>Trace No</th>
+                        <th>System Date</th>
+                        <th>Business Date</th>
+                        <th>Teller</th>
+                        <th>Teller Name</th>
+                        <th>Branch</th>
+                        <th>Supervisor</th>
+                        <th>Supervisor Name</th>
+                        <th>Account</th>
+                        <th>Currency</th>
+                        <th>Txn Amount</th>
+                        <th>Terminal</th>
+                        <th>Override Id</th>
+                    </tr>
+                    <tr bind="JournalItems">
+                        <td bind-item="JournalId"></td>
+                        <td bind-item="GroupId"></td>
+                        <td bind-item="TxnCode"></td>
+                        <td bind-item="Title"></td>
+                        <td bind-item="StatusDescription"></td>
+                        <td bind-item="ErrCode"></td>
+                        <td bind-item="ErrDescription"></td>
+                        <td bind-item="ProcTime"></td>
+                        <td bind-item="HostId"></td>
+                        <td bind-item="HostName"></td>
+                        <td bind-item="TraceNo"></td>
+                        <td bind-item="SystemDate"></td>
+                        <td bind-item="BusinessDate"></td>
+                        <td bind-item="Teller"></td>
+                        <td bind-item="TellerName"></td>
+                        <td bind-item="BranchId"></td>
+                        <td bind-item="Supervisor"></td>
+                        <td bind-item="SupervisorName"></td>
+                        <td bind-item="Account"></td>
+                        <td bind-item="Currency"></td>
+                        <td bind-item="TxnAmount"></td>
+                        <td bind-item="Terminal"></td>
+                        <td bind-item="OverrideId"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="aaaa"></div>
+        </form>
+        <script>
+            var Action099999 = function () { };
+            Action099999.prototype.Ready = function (Container) {
+                var Action = this;
+                $(".data_table tr").on("click", function() {
+                    //alert("Show Journal " + $(this).find("td:eq(0)").html())
+                    $("#bl_txntab_new").click();
+
+                    $(this).find("td:eq(0)").html()
+                    var ErrCode = $(this).find("td:eq(5)").html();
+
+                    if (ErrCode && ErrCode != "0") {
+                        ErrCode = $(this).find("td:eq(5)").html();
+                    } else { ErrCode = "0" }
+
+                    var ErrDescription = $(this).find("td:eq(6)").html();
+                    $.Workflow.OpenTransaction("099998", false, { OriginalUser: $(this).find("td:eq(13)").html(), JournalId: $(this).find("td:eq(0)").html(), GroupId: $(this).find("td:eq(1)").html(), ErrCode: ErrCode, ErrDescription: ErrDescription, OverrideId: $(this).find("td:eq(22)").html() });
+                })
+                this.Resize(Container);
+
+                $(window).on("resize.099999", function () {
+                    if ($(Container).parent().length > 0) {
+                        Action.Resize(Container);
+                    } else {
+                        $(window).off("resize.099999");
+                    }
+                })
+            }
+
+            Action099999.prototype.Resize = function (Container) {
+                //var tb = $(Container).find(".data_table:eq(0)")[0];
+                //var height = 0;
+                //while (tb) {
+                //    alert(height)
+                //    alert(tb.outerHTML);
+                //    if (!isNaN(tb.offsetTop)) height += tb.offsetTop;
+                //    tb = $(tb).parent()[0];
+                //}
+                height = window.innerHeight - $(Container).find(".data_table:eq(0)").parents("div:eq(0)")[0].offsetTop - 100;
+                if (height < 150) height = 150;
+                $(Container).find(".data_table:eq(1)").parent().css("height", height.toString() + "px");
+            }
+
+            
+        </script>
+    </div>
+    <div class="bl_control_area"><div></div></div>
+</body>
+</html>

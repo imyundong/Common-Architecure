@@ -1,0 +1,15 @@
+﻿Table TxnPath
+Y Y TxnPathId           INT      2      0
+N N ParentId            INT      2      0
+N N PathName            VARCHAR  MAX    ''
+N N Priority            INT      2      0
+End Table
+
+Query ByOrder
+Order = ParentId`ASC,Priority`DESC
+End Query
+
+Query ByParent
+Key = ParentId
+Order = Priority`DESC
+End Query

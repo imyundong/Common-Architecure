@@ -1,0 +1,29 @@
+﻿<!Doctype html>
+<html>
+<head>
+    <title>Bancslink+ Integrated Authentication Platform</title>
+    <link rel="stylesheet" href="CSS/Style.css" />
+    <link rel="stylesheet" href="CSS/Animate.css" />
+    <link rel="stylesheet" href="CSS/Transactions.css" />
+</head>
+<body>
+    <div id="bl_container">
+        <div id="bl_transactions" style="margin-top: 10px;">
+            <div id="page_1" class="bl_txn">
+            </div>
+        </div>
+    </div>
+    <script src="Scripts/jquery-1.11.1.js"></script>
+    <script src="Scripts/jquery-validation-0.7.1.js"></script>
+    <script src="Scripts/jquery-blockUI.js"></script>
+    <script src="Scripts/bl-library.js"></script>
+    <script src="Scripts/bl-utility.js"></script>
+    <script src="Scripts/zip.js"></script>
+    <script src="Scripts/bl-client-workflow.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.Workflow.CleanStart("SSOAuthentication");
+        })
+    </script>
+</body>
+</html>

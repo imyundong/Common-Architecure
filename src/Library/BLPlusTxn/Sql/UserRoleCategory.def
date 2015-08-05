@@ -1,0 +1,7 @@
+﻿Table UserRoleCategory
+Y Y RoleId          INT      4
+N N RoleDescription VARCHAR  50
+N N Capability      INT      4
+N N RoleGroup       INT      4
+N N RoleAttribuite  VARCHAR  3
+End Table

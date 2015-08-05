@@ -1,0 +1,11 @@
+﻿
+Table BGLACCOUNTPR
+Y Y BRANCHCD         VARCHAR  64  ""
+Y Y ACCOUNT         VARCHAR  16  ""
+N N CANELMARK         CHAR  1  ""
+N N ZEROMARK         CHAR  1  ""
+End Table
+
+Query ByACCOUNT
+Key   = BRANCHCD
+End Query

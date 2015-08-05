@@ -1,0 +1,4 @@
+﻿Table CMSKEY
+Y Y KEYID           VARCHAR    20    0
+N N KEYVALUE        VARCHAR   200   ""
+End Table
