@@ -35,5 +35,5 @@
       </Component>
     </Server>
   </Hosts>
-  <Database DBType="SQLServer" ConnectionString="IData Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=Data\Database\BLPlus.mdf;Integrated Security=True;Connect Timeout=30" />
+  <Database DBType="SQLServer" ConnectionString="IData Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=Data\BLPlus.mdf;Integrated Security=True;Connect Timeout=30" />
 </AppConfig>
