@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AppConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SystemName>Bancslink Batch System</SystemName>
+  <Log>
+    <LogPath>Logs</LogPath>
+    <LogSize>1048576</LogSize>
+    <Prefix>Bancslink.Plus.Batch</Prefix>
+    <LogCount>99</LogCount>
+    <LogLevel>Debug, Warning, Info, Txn, System, Error, Dump</LogLevel>
+  </Log>
+  <Tasks>
+    <!-- FixedInterval: (Seconds) -->
+	<!-- Interval: (Seconds) -->
+	<!-- Fixed: *.*.*.*.10 -->
+    <TaskGroup Id="Notifications" Repeat="Repeat" Frequency="FixedInterval: 5">
+      <Task TaskId="GetNotificationSummary" />
+    </TaskGroup>
+  </Tasks>
+  <Database DBType="SQLServer" ConnectionString="IData Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=Data\Database\BLPlus.mdf;Integrated Security=True;Connect Timeout=30" />
+</AppConfig>

@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="yes"?>
+<GROUP ID="53" Name="Output Code 53">
+  <RX>
+    <FIELD Format="B(MAX)"  ID="W_Warning_Message" />
+  </RX>
+</GROUP>

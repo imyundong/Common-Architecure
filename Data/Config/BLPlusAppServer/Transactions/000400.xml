@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<GROUP ID="000400" Name="">
+  <TX>
+    <FIELD Format="9(17)" ID="Account" />
+    <FIELD Format="X(1)"  ID="Option">1</FIELD>
+    <FIELD Format="9(1)"  ID="Display">3</FIELD>
+    <FIELD Format="9(1)"  ID="X_Display2" />
+    <FIELD Format="9(8)"  ID="X_FromDate" />
+	<FIELD Format="9(8)"  ID="X_ToDate" />
+  </TX>
+</GROUP>

@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+<GROUP ID="28" Name="Output Code 28">
+  <RX>
+    <FIELD Format="X(3)"  ID="M_PRT_FormId" />
+    <FIELD Format="X(5)"  ID="M_PRT_TxnCode" />
+    <FIELD Format="X(4)"  ID="M_PRT_BranchNo" />
+    <FIELD Format="X(3)"  ID="M_PRT_TerminalNo" />
+    <FIELD Format="X(5)"  ID="M_PRT_TellerNo" />
+    <FIELD Format="X(20)" ID="M_PRT_TellerName" />
+    <FIELD Format="X(5)"  ID="M_PRT_SupervisorId" />
+    <FIELD Format="X(20)" ID="M_PRT_SupervisorName" />
+    <FIELD Format="X(8)"  ID="M_PRT_TxnDate" />
+    <FIELD Format="X(6)"  ID="M_PRT_TxnTime" />
+    <FIELD Format="X(2)"  ID="M_PRT_TxnTime1" />
+    <FIELD Format="X(6)"  ID="M_PRT_JournalNo" />
+    <FIELD Format="X(1)"  ID="M_PRT_TxnSign1" />
+    <FIELD Format="X(1)"  ID="M_PRT_TxnSign2" />
+    <FIELD Format="X(1)"  ID="M_PRT_TxnSign3" />
+    <FIELD Format="9(14)" ID="M_PRT_TxnAmountHeader" />
+    <FIELD Format="X(8)"  ID="M_PRT_BackDate" />
+    <FIELD Format="9(14)V999S" ID="M_PRT_BalanceAmount" />
+    <FIELD Format="X(11)" ID="M_PRT_VoucherSpecific" />
+    <SELECT switch="M_PRT_FormId" />
+  </RX>
+</GROUP>

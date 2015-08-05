@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<GROUP ID="032000" Name="">
+  <RX>
+    <FIELD Format="9(3)"  ID="X_F1" />
+	<FIELD Format="9(17)" ID="Account" />
+    <FIELD Format="X(3)"  ID="Currency" />
+    <FIELD Format="X(7)"  ID="Status" />
+	<FIELD Format="9(1)"  ID="X_F2" />
+    <FIELD Format="9(3)"  ID="X_Branch_No" />
+    <FIELD Format="X(30)" ID="AccountTypeDescription" />
+    <FIELD Format="X(4)"  ID="X_F3" />
+    <FIELD Format="X(4)"  ID="X_F4" />
+    <FIELD Format="X(4)"  ID="X_F5" />
+    <FIELD Format="X(7)"  ID="X_F6" />
+    <FIELD Format="X(60)" ID="AccountName" />
+    <FIELD Format="X(58)" ID="CustomerName" />
+    <FIELD Format="X(12)" ID="X_F7" />
+    <FIELD Format="X(12)" ID="X_F8" />
+    <FIELD Format="X(10)" ID="OpenDate" />
+    <FIELD Format="X(10)" ID="X_F10" />
+    <FIELD Format="X(10)" ID="X_F11" />
+    <FIELD Format="X(10)" ID="X_F12" />
+    <FIELD Format="X(10)" ID="X_F13" />
+    <FIELD Format="X(10)" ID="X_F14" />
+    <FIELD Format="9(18)" ID="CurrentBalance" />
+	<FIELD Format="X(380)" ID="X_F15" />
+	<FIELD Format="X(20)" ID="PassbookNo" />
+  </RX>
+</GROUP>

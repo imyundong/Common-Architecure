@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<GROUP ID="Print001" Name="">
+  <RX>
+    <FIELD Format="X(16)"      ID="PRT_Account" />
+    <FIELD Format="X(40)"      ID="PRT_AccountName" />
+    <FIELD Format="X(1)"       ID="PRT_X_F1" />
+    <FIELD Format="X(1)"       ID="PRT_X_F2" />
+    <FIELD Format="X(1)"       ID="PRT_X_F3" />
+    <FIELD Format="9(14)V999S" ID="PRT_AccountName" />
+    <FIELD Format="X(8)"       ID="PRT_TranDate" />
+    <FIELD Format="X(50)"      ID="PRT_Narrative" />
+    <FIELD Format="X(6)"       ID="PRT_TraceNo" />
+  </RX>
+</GROUP>

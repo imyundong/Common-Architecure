@@ -1,0 +1,69 @@
+<GROUP ID="Bancs.Gateway">
+  <TX>
+    <FIELD Format="XX"   ID="X_Filler2" />
+    <FIELD Format="XX"   ID="X_MsgType" />
+    <FIELD Format="X(4)" ID="X_Filler3" />
+    <FIELD Format="X(6)" ID="X_CycleNo" />
+    <FIELD Format="X(6)" ID="X_MsgNo" />
+    <FIELD Format="XX"   ID="X_SegNo">**</FIELD>
+    <FIELD Format="XX"   ID="X_SegNo2" />
+    <FIELD Format="X(4)" ID="X_FrontEndNo" />
+    <FIELD Format="X(6)" ID="X_TerminalNo" />
+    <FIELD Format="999"  ID="InstitutionNo">3</FIELD>
+    <FIELD Format="9(4)" ID="BranchNo" />
+    <FIELD Format="999"  ID="X_WorkstationNo" />
+	<!-- Mapping From Table -->
+    <FIELD Format="9(5)" ID="HostTellerNo" />
+    <FIELD Format="X(6)" ID="HostTxnCode" />
+    <FIELD Format="9(6)" ID="X_JournalNo" />
+    <FIELD Format="X(4)" ID="X_HeaderDate" />
+    <FIELD Format="X"    ID="X_Filler4" />
+    <FIELD Format="9"    ID="X_Filler5" />
+    <FIELD Format="XX"   ID="X_Filler6" />
+    <FIELD Format="X"    ID="X_Flag1" />
+    <FIELD Format="X"    ID="X_Flag2" />
+    <FIELD Format="X"    ID="X_Flag3" />
+    <FIELD Format="X"    ID="X_Flag4">0</FIELD>
+    <FIELD Format="X"    ID="X_Filler7" />
+    <FIELD Format="9(6)" ID="X_SupervisorID" />
+    <FIELD Format="X"    ID="X_DebugFlag" />
+    <FIELD Format="X"    ID="X_DebugQueue" />
+	<SELECT switch="HostTxnCode" />
+  </TX>
+  <RX>
+    <FIELD Format="XX"   ID="X_Filler2" />
+    <FIELD Format="XX"   ID="X_MsgType" />
+    <FIELD Format="X(4)" ID="X_Filler3" />
+    <FIELD Format="X(6)" ID="X_CycleNo" />
+    <FIELD Format="X(6)" ID="X_MsgNo" />
+    <FIELD Format="XX"   ID="X_SegNo" />
+    <FIELD Format="XX"   ID="X_SegNo2" />
+    <FIELD Format="X(4)" ID="X_FrontEndNo" />
+    <FIELD Format="X(6)" ID="X_TerminalNo" />
+    <FIELD Format="999"  ID="InstitutionNo" />
+    <FIELD Format="9(4)" ID="BranchNo" />
+    <FIELD Format="999"  ID="X_WorkstationNo" />
+	<!-- Mapping From Table -->
+    <FIELD Format="9(5)" ID="TellerNo" />
+    <FIELD Format="X(6)" ID="HostTxnCode" />
+    <FIELD Format="9(6)" ID="TraceNo" />
+    <FIELD Format="X(4)" ID="X_HeaderDate" />
+    <FIELD Format="X"    ID="X_Filler4" />
+    <FIELD Format="9"    ID="X_Filler5" />
+    <FIELD Format="XX"   ID="X_Filler6" />
+    <FIELD Format="X"    ID="X_Flag1" />
+    <FIELD Format="X"    ID="LastMessage"  Value1="2" Value2="6" />
+    <FIELD Format="X"    ID="X_Flag3" />
+    <FIELD Format="X"    ID="X_Flag4" />
+    <FIELD Format="X(1)" ID="X_Filler81" />
+    <FIELD Format="X(6)" ID="X_Filler8" />
+    <FIELD Format="X(2)" ID="X_Filler82" />
+    <FIELD Format="XX"   ID="OutputType" />
+	<SELECT switch="OutputType">
+		<CASE Value="01">Error</CASE>
+		<CASE Value="08">OKMessage</CASE>
+        <CASE Value="28">Voucher</CASE>
+		<CASEELSE>StandardResponse</CASEELSE>
+	</SELECT>
+  </RX>
+</GROUP>
