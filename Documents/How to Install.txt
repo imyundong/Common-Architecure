@@ -1,0 +1,22 @@
+1. System Requirement
+   1) Windows 7+
+   2) Visual Studio 2012/2013/2015
+   3) Install MSMQ(Add/Remove Programs)
+   4) Local DB Required(Otherwise you need to create your own database (from BLPlus.mdf).
+
+2. Run Web Site
+   1) Open "src/WebServer/WebServer.sln"
+   2) Complie and Run
+
+3. Run Application Server
+   1) Create "Data" and "Config" Folder under "src\AppServer\AppServerLoader\bin\Debug"
+   2) Copy All Files From "Data/Config" Directory to  "src\AppServer\AppServerLoader\bin\Debug\Config"
+      Note: If you create database by yourself, or you database connection string need to be changed, pls change these files:
+      a) src\AppServer\AppServerLoader\bin\Debug\Config\BLPlusAppServer\BLPlusAppServerConfig.xml
+      b) src\AppServer\AppServerLoader\bin\Debug\Config\BLPlusBatch\BLPlusBatchConfig.xml
+
+   3) Copy Data File "Data/Database/BLPlus.mdf" to "src\AppServer\AppServerLoader\bin\Debug\Data"
+   4) Use Visual Studio to Open "src/AppServer/WAppServerLoader.sln" and Compile All the Codes
+   5) Run the Program, You will see the console screen and select 1 to check the application status. (Should be successful)
+
+
