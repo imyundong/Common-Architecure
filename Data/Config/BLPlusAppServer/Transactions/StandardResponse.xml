@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<GROUP ID="Error" Name="">
+  <RX>
+	<SELECT switch="HostTxnCode" />
+  </RX>
+</GROUP>

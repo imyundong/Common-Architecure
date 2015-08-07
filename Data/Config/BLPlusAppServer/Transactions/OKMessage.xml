@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<GROUP ID="OKMessage" Name="OKMessage">
+  <RX>
+    <FIELD Format="X(4)"   ID="OKCode" />
+    <FIELD Format="X(100)" ID="OKMessage" />
+  </RX>
+</GROUP>

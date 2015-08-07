@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AppConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SystemName>Bancslink</SystemName>
+  <Log>
+    <LogPath>Logs</LogPath>
+    <LogSize>4048576</LogSize>
+    <Prefix>Bancslink.Plus.AppServer</Prefix>
+    <LogCount>99</LogCount>
+    <LogLevel>Debug, Warning, Info, Txn, System, Error, Dump</LogLevel>
+  </Log>
+  <TxnMapping>
+    <Txn TxnCode="000400" MapTo="999999" />
+    <Txn TxnCode="001010" MapTo="999999" />
+  </TxnMapping>
+  <Request Converter="" Id="Bancslink WebServer">
+    <Component Assembly="Communication" Category="MSMQCommunication" Mode="Async" RunAt="Server" Timeout="10000">
+      <Address>.\Private$\ResponseQ1, .\Private$\RequestQ1</Address>
+      <Port>0</Port>
+    </Component>
+  </Request>
+  <Hosts>
+    <Server Id="Bancs">
+	    <Converter Category="Communication.BancsDataConverter">
+	      <WorkingPath>Config\BLPlusAppServer\Transactions</WorkingPath>
+		  <Master>BancsMaster.xml</Master>
+          <Encoding>950</Encoding>
+	    </Converter>
+      <Component Assembly="Communication" MaxConnections="5" Category="TCPLTConnection" Mode="Sync" RunAt="Client" Timeout="10000">
+        <Address>127.0.0.1</Address>
+        <Port>9999</Port>
+        <MessageLen>5</MessageLen>
+        <!-- Hex, ASCII -->
+        <MessageLenType>ASCII</MessageLenType>
+        <MessageLenIncluded>false</MessageLenIncluded>
+      </Component>
+    </Server>
+  </Hosts>
+  <Database DBType="SQLServer" ConnectionString="IData Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=Data\BLPlus.mdf;Integrated Security=True;Connect Timeout=30" />
+</AppConfig>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<GROUP ID="Error" Name="">
+  <RX>
+    <FIELD Format="X(4)"   ID="X_F3" />
+    <FIELD Format="X(4)"   ID="ErrCode" />
+	<FIELD Format="X(1)"   ID="X_F1" />
+    <FIELD Format="99"     ID="Override" />
+	<FIELD Format="X(1)"   ID="X_F2" />
+    <FIELD Format="X(100)" ID="ErrDescription" />
+  </RX>
+</GROUP>

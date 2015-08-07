@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<GROUP ID="001010" Name="">
+  <TX>
+    <FIELD Format="9(17)"      ID="Account" />
+    <FIELD Format="X(18)"      ID="X_F1" />
+    <FIELD Format="9(14)V999S" ID="Amount" />
+    <FIELD Format="X(10)"      ID="X_F2" />
+    <FIELD Format="X(2)"       ID="X_F3" />
+    <FIELD Format="9(2)"       ID="X_F4" />
+    <FIELD Format="X(84)"      ID="X_F5" />
+    <FIELD Format="X(3)"       ID="X_F6" />
+    <FIELD Format="9(14)V999S" ID="Amount" />
+    <FIELD Format="X(3)"       ID="X_F8" />
+    <FIELD Format="9(14)V999S" ID="X_F9" />
+    <FIELD Format="9(14)V999S" ID="X_F10" />
+    <FIELD Format="9(14)V999S" ID="X_F11" />
+    <FIELD Format="9(2)"       ID="X_F12" />
+    <FIELD Format="X(4)"       ID="X_F13" />
+  </TX>
+</GROUP>

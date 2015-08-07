@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AppConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SystemName>Bancslink</SystemName>
+  <Log>
+    <LogPath>Logs</LogPath>
+    <LogSize>1048576</LogSize>
+    <Prefix>ApplicationPlatform</Prefix>
+    <LogCount>99</LogCount>
+    <LogLevel>Debug, Warning, Info, Txn, System, Error, Dump</LogLevel>
+  </Log>
+  <PlatformComponent>
+    <Communication>
+      <ComponentPath>Communication</ComponentPath>
+      <Component Assembly="Communication" Category="MSMQCommunication" />
+      <Component Assembly="Communication" Category="TCPLTConnection" />
+      <Component Assembly="Communication" Category="BancsDataConverter" />
+    </Communication>
+    <Application>
+      <ComponentPath>Application</ComponentPath>
+      <Component Assembly="Application" Category="StandardApplication" />
+      <Component Assembly="Application" Category="TaskSchedule" />
+    </Application>
+    <Database>
+      <ComponentPath>DatabaseAdapter</ComponentPath>
+      <Component Assembly="DatabaseAdapter" Category="SQLServer" />
+    </Database>
+  </PlatformComponent>
+  <!-- Application List -->
+  <Application>
+    <Application Id="BLPlusAppServer"      Category="Application.StandardApplication" ConfigFile="Config/BLPlusAppServer/BLPlusAppServerConfig.xml"       TxnPath="BLPlusAppServerTxn" />   
+	<Application Id="BLPlusBatch"          Category="Application.TaskSchedule"        ConfigFile="Config/BLPlusBatch/BLPlusBatchConfig.xml"               TxnPath="BLPlusBatchTask" />
+	<!--
+	<Application Id="BLBatch"              Category="Application.TaskSchedule"        ConfigFile="Config/BLBatch/BLBatchConfig.xml"                       TxnPath="BLBatchTask" />
+    <Application Id="BLAppServer"          Category="Application.StandardApplication" ConfigFile="Config/BLAppServer/BLAppServerConfig.xml"               TxnPath="BLAppServerTxn" />
+	<Application Id="BLNotificaionGateway" Category="Application.StandardApplication" ConfigFile="Config/BLNotificationGateway/BLNotifyGatewayConfig.xml" TxnPath="BLNotifyGatewayTxn" />-->
+  <!-- New Add For FEP Gateway 
+	<Application Id="BLFEPGateway"         Category="Application.StandardApplication" ConfigFile="Config/BLFEPGateway/BLFEPGatewayConfig.xml"             TxnPath="BLFEPGatewayTxn" />
+	-->
+  </Application>
+</AppConfig>
